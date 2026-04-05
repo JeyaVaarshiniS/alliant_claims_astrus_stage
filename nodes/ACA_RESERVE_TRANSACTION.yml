@@ -1,0 +1,92 @@
+fileVersion: 1
+id: 1a2b3c4d-1122-4a5b-9b6c-2d3e4f5a6b7c
+name: ACA_RESERVE_TRANSACTION
+operation:
+  database: ""
+  deployEnabled: true
+  description: ""
+  locationName: DBSHIFT
+  metadata:
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6b7c8d9e-2233-4b6c-8c7d-7e8f9a0b1c2d
+          stepCounter: 1a2b3c4d-1122-4a5b-9b6c-2d3e4f5a6b7c
+        config: {}
+        dataType: NUMBER
+        defaultValue: ""
+        description: ""
+        name: ACA_SOURCE_SYSTEM_ID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8d9e0f1a-3344-4c7d-9d8e-9f0a1b2c3d4e
+          stepCounter: 1a2b3c4d-1122-4a5b-9b6c-2d3e4f5a6b7c
+        config: {}
+        dataType: VARCHAR
+        defaultValue: ""
+        description: ""
+        name: SOURCE_SYSTEM_CLAIM_ID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0f1a2b3c-4455-4d8e-aead-1b2c3d4e5f6a
+          stepCounter: 1a2b3c4d-1122-4a5b-9b6c-2d3e4f5a6b7c
+        config: {}
+        dataType: VARCHAR
+        defaultValue: ""
+        description: ""
+        name: RESERVE_TYPE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2b3c4d5e-5566-4e9f-bfbe-3c4d5e6f7a8b
+          stepCounter: 1a2b3c4d-1122-4a5b-9b6c-2d3e4f5a6b7c
+        config: {}
+        dataType: NUMBER
+        defaultValue: ""
+        description: ""
+        name: RESERVE_AMOUNT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+  name: ACA_RESERVE_TRANSACTION
+  schema: ""
+  sqlType: Source
+  type: sourceInput
+  version: 1
+type: Node

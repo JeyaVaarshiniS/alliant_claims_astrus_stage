@@ -1,0 +1,92 @@
+fileVersion: 1
+id: 0e5a6c11-0011-4b1a-8c1d-1e1a1b1c1d1e
+name: ACA_PAYMENT_TRANSACTION
+operation:
+  database: ""
+  deployEnabled: true
+  description: ""
+  locationName: DBSHIFT
+  metadata:
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2e8b9f22-0022-4c2b-8d2e-2f2b2c2d2e2f
+          stepCounter: 0e5a6c11-0011-4b1a-8c1d-1e1a1b1c1d1e
+        config: {}
+        dataType: NUMBER
+        defaultValue: ""
+        description: ""
+        name: ACA_SOURCE_SYSTEM_ID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3e1c2d33-0033-4d3c-8e3f-3g3c3d3e3f3g
+          stepCounter: 0e5a6c11-0011-4b1a-8c1d-1e1a1b1c1d1e
+        config: {}
+        dataType: VARCHAR
+        defaultValue: ""
+        description: ""
+        name: SOURCE_SYSTEM_CLAIM_ID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4e4d5e66-0044-4e4d-8f4a-4h4d4e4f4a4h
+          stepCounter: 0e5a6c11-0011-4b1a-8c1d-1e1a1b1c1d1e
+        config: {}
+        dataType: VARCHAR
+        defaultValue: ""
+        description: ""
+        name: RESERVE_TYPE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5e7f8g99-0055-4f5e-9a5b-5i5e5f5g5b5i
+          stepCounter: 0e5a6c11-0011-4b1a-8c1d-1e1a1b1c1d1e
+        config: {}
+        dataType: NUMBER
+        defaultValue: ""
+        description: ""
+        name: PAYMENT_AMOUNT_BY_RESERVE_TYPE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+  name: ACA_PAYMENT_TRANSACTION
+  schema: ""
+  sqlType: Source
+  type: sourceInput
+  version: 1
+type: Node

@@ -1,0 +1,123 @@
+fileVersion: 1
+id: 5a6b7c8d-5566-4e9f-bfbe-6b7c8d9e0f1a
+name: STG_TMP_PAYMENTS
+operation:
+  config:
+    insertStrategy: INSERT
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: true
+    truncateBefore: true
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: DBSHIFT
+  materializationType: view
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1e2f3a4b-4455-4b8c-4847-e2f3a4b5c6d7
+          stepCounter: 5a6b7c8d-5566-4e9f-bfbe-6b7c8d9e0f1a
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: SOURCE_SYSTEM_CLAIM_ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3e1c2d33-0033-4d3c-8e3f-3g3c3d3e3f3g
+                stepCounter: 0e5a6c11-0011-4b1a-8c1d-1e1a1b1c1d1e
+            transform: PT.SOURCE_SYSTEM_CLAIM_ID
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2f3a4b5c-5566-4c9d-5958-f3a4b5c6d7e8
+          stepCounter: 5a6b7c8d-5566-4e9f-bfbe-6b7c8d9e0f1a
+        config: {}
+        dataType: NUMBER(38,2)
+        description: ""
+        name: AMOUNT_MEDICAL
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4e4d5e66-0044-4e4d-8f4a-4h4d4e4f4a4h
+                stepCounter: 0e5a6c11-0011-4b1a-8c1d-1e1a1b1c1d1e
+              - columnCounter: 5e7f8g99-0055-4f5e-9a5b-5i5e5f5g5b5i
+                stepCounter: 0e5a6c11-0011-4b1a-8c1d-1e1a1b1c1d1e
+            transform: COALESCE(SUM(IFF(PT.RESERVE_TYPE = 'Medical', PT.PAYMENT_AMOUNT_BY_RESERVE_TYPE, NULL)), 0.00)
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3a4b5c6d-6677-4dae-6a69-a4b5c6d7e8f9
+          stepCounter: 5a6b7c8d-5566-4e9f-bfbe-6b7c8d9e0f1a
+        config: {}
+        dataType: NUMBER(38,2)
+        description: ""
+        name: AMOUNT_EXPENSE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4e4d5e66-0044-4e4d-8f4a-4h4d4e4f4a4h
+                stepCounter: 0e5a6c11-0011-4b1a-8c1d-1e1a1b1c1d1e
+              - columnCounter: 5e7f8g99-0055-4f5e-9a5b-5i5e5f5g5b5i
+                stepCounter: 0e5a6c11-0011-4b1a-8c1d-1e1a1b1c1d1e
+            transform: COALESCE(SUM(IFF(PT.RESERVE_TYPE = 'Expense', PT.PAYMENT_AMOUNT_BY_RESERVE_TYPE, NULL)), 0.00)
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4b5c6d7e-7788-4ebf-7b7a-b5c6d7e8f9a0
+          stepCounter: 5a6b7c8d-5566-4e9f-bfbe-6b7c8d9e0f1a
+        config: {}
+        dataType: NUMBER(38,2)
+        description: ""
+        name: AMOUNT_INDEMNITY
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4e4d5e66-0044-4e4d-8f4a-4h4d4e4f4a4h
+                stepCounter: 0e5a6c11-0011-4b1a-8c1d-1e1a1b1c1d1e
+              - columnCounter: 5e7f8g99-0055-4f5e-9a5b-5i5e5f5g5b5i
+                stepCounter: 0e5a6c11-0011-4b1a-8c1d-1e1a1b1c1d1e
+            transform: COALESCE(SUM(IFF(PT.RESERVE_TYPE = 'Indemnity', PT.PAYMENT_AMOUNT_BY_RESERVE_TYPE, NULL)), 0.00)
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5c6d7e8f-8899-4fc0-8c8b-c6d7e8f9a0b1
+          stepCounter: 5a6b7c8d-5566-4e9f-bfbe-6b7c8d9e0f1a
+        config: {}
+        dataType: NUMBER(38,2)
+        description: ""
+        name: AMOUNT_TOTAL
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5e7f8g99-0055-4f5e-9a5b-5i5e5f5g5b5i
+                stepCounter: 0e5a6c11-0011-4b1a-8c1d-1e1a1b1c1d1e
+            transform: SUM(PT.PAYMENT_AMOUNT_BY_RESERVE_TYPE)
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          ACA_PAYMENT_TRANSACTION: PT
+          ACA_SOURCE_SYSTEM: SS
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: DBSHIFT
+            nodeName: ACA_PAYMENT_TRANSACTION
+          - locationName: DBSHIFT
+            nodeName: ACA_SOURCE_SYSTEM
+        join:
+          joinCondition: |-
+            FROM {{ ref('DBSHIFT', 'ACA_PAYMENT_TRANSACTION') }} "PT"
+            INNER JOIN {{ ref('DBSHIFT', 'ACA_SOURCE_SYSTEM') }} "SS" ON PT.ACA_SOURCE_SYSTEM_ID = SS.ACA_SOURCE_SYSTEM_ID
+            WHERE SS.SOURCE_SYSTEM = 'ESIS'
+            GROUP BY PT.SOURCE_SYSTEM_CLAIM_ID
+        name: STG_TMP_PAYMENTS
+        noLinkRefs: []
+  name: STG_TMP_PAYMENTS
+  overrideSQL: false
+  schema: ""
+  sqlType: Stage
+  type: sql
+  version: 1
+type: Node

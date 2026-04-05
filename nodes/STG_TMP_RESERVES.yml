@@ -1,0 +1,123 @@
+fileVersion: 1
+id: 6b7c8d9e-6677-4f0a-c0cf-7c8d9e0f1a2b
+name: STG_TMP_RESERVES
+operation:
+  config:
+    insertStrategy: INSERT
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: true
+    truncateBefore: true
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: DBSHIFT
+  materializationType: view
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6d7e8f9a-8899-4b1c-9d9c-d7e8f9a0b1c2
+          stepCounter: 6b7c8d9e-6677-4f0a-c0cf-7c8d9e0f1a2b
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: SOURCE_SYSTEM_CLAIM_ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8d9e0f1a-3344-4c7d-9d8e-9f0a1b2c3d4e
+                stepCounter: 1a2b3c4d-1122-4a5b-9b6c-2d3e4f5a6b7c
+            transform: RT.SOURCE_SYSTEM_CLAIM_ID
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7e8f9a0b-9900-4c2d-aeae-e8f9a0b1c2d3
+          stepCounter: 6b7c8d9e-6677-4f0a-c0cf-7c8d9e0f1a2b
+        config: {}
+        dataType: NUMBER(38,2)
+        description: ""
+        name: AMOUNT_MEDICAL
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 0f1a2b3c-4455-4d8e-aead-1b2c3d4e5f6a
+                stepCounter: 1a2b3c4d-1122-4a5b-9b6c-2d3e4f5a6b7c
+              - columnCounter: 2b3c4d5e-5566-4e9f-bfbe-3c4d5e6f7a8b
+                stepCounter: 1a2b3c4d-1122-4a5b-9b6c-2d3e4f5a6b7c
+            transform: COALESCE(SUM(IFF(RT.RESERVE_TYPE = 'Medical', RT.RESERVE_AMOUNT, NULL)), 0.00)
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8f9a0b1c-0011-4d3e-bfbf-f9a0b1c2d3e4
+          stepCounter: 6b7c8d9e-6677-4f0a-c0cf-7c8d9e0f1a2b
+        config: {}
+        dataType: NUMBER(38,2)
+        description: ""
+        name: AMOUNT_EXPENSE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 0f1a2b3c-4455-4d8e-aead-1b2c3d4e5f6a
+                stepCounter: 1a2b3c4d-1122-4a5b-9b6c-2d3e4f5a6b7c
+              - columnCounter: 2b3c4d5e-5566-4e9f-bfbe-3c4d5e6f7a8b
+                stepCounter: 1a2b3c4d-1122-4a5b-9b6c-2d3e4f5a6b7c
+            transform: COALESCE(SUM(IFF(RT.RESERVE_TYPE = 'Expense', RT.RESERVE_AMOUNT, NULL)), 0.00)
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9a0b1c2d-1122-4e4f-c0c0-a0b1c2d3e4f5
+          stepCounter: 6b7c8d9e-6677-4f0a-c0cf-7c8d9e0f1a2b
+        config: {}
+        dataType: NUMBER(38,2)
+        description: ""
+        name: AMOUNT_INDEMNITY
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 0f1a2b3c-4455-4d8e-aead-1b2c3d4e5f6a
+                stepCounter: 1a2b3c4d-1122-4a5b-9b6c-2d3e4f5a6b7c
+              - columnCounter: 2b3c4d5e-5566-4e9f-bfbe-3c4d5e6f7a8b
+                stepCounter: 1a2b3c4d-1122-4a5b-9b6c-2d3e4f5a6b7c
+            transform: COALESCE(SUM(IFF(RT.RESERVE_TYPE = 'Indemnity', RT.RESERVE_AMOUNT, NULL)), 0.00)
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0b1c2d3e-2233-4f5a-d1d1-b1c2d3e4f5a6
+          stepCounter: 6b7c8d9e-6677-4f0a-c0cf-7c8d9e0f1a2b
+        config: {}
+        dataType: NUMBER(38,2)
+        description: ""
+        name: AMOUNT_TOTAL
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 2b3c4d5e-5566-4e9f-bfbe-3c4d5e6f7a8b
+                stepCounter: 1a2b3c4d-1122-4a5b-9b6c-2d3e4f5a6b7c
+            transform: SUM(RT.RESERVE_AMOUNT)
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          ACA_RESERVE_TRANSACTION: RT
+          ACA_SOURCE_SYSTEM: SS
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: DBSHIFT
+            nodeName: ACA_RESERVE_TRANSACTION
+          - locationName: DBSHIFT
+            nodeName: ACA_SOURCE_SYSTEM
+        join:
+          joinCondition: |-
+            FROM {{ ref('DBSHIFT', 'ACA_RESERVE_TRANSACTION') }} "RT"
+            INNER JOIN {{ ref('DBSHIFT', 'ACA_SOURCE_SYSTEM') }} "SS" ON RT.ACA_SOURCE_SYSTEM_ID = SS.ACA_SOURCE_SYSTEM_ID
+            WHERE SS.SOURCE_SYSTEM = 'ESIS'
+            GROUP BY RT.SOURCE_SYSTEM_CLAIM_ID
+        name: STG_TMP_RESERVES
+        noLinkRefs: []
+  name: STG_TMP_RESERVES
+  overrideSQL: false
+  schema: ""
+  sqlType: Stage
+  type: sql
+  version: 1
+type: Node

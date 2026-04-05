@@ -1,0 +1,424 @@
+fileVersion: 1
+id: 2b3c4d5e-2233-4f6a-2625-3c4d5e6f7a8b
+name: STG_COMBINED_MISMATCH
+operation:
+  config:
+    insertStrategy: INSERT
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: true
+    truncateBefore: true
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: DBSHIFT
+  materializationType: view
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6b7c8d9e-8899-4fc0-f3f3-b7c8d9e0f1a2
+          stepCounter: 2b3c4d5e-2233-4f6a-2625-3c4d5e6f7a8b
+        config: {}
+        dataType: VARCHAR(100)
+        description: ""
+        name: CLAIM_ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5e6f7a8b-7788-4c3d-c0c0-e6f7a8b9c0d1
+                stepCounter: 9e0f1a2b-9900-4c3d-f3f2-0f1a2b3c4d5e
+            transform: U.CLAIM_ID
+          - columnReferences:
+              - columnCounter: 2d3e4f5a-4455-4b8c-d1d1-d3e4f5a6b7c8
+                stepCounter: 0f1a2b3c-0011-4d4e-0403-1a2b3c4d5e6f
+            transform: U.CLAIM_ID
+          - columnReferences:
+              - columnCounter: 9c0d1e2f-1122-4a7b-e2e2-c0d1e2f3a4b5
+                stepCounter: 1a2b3c4d-1122-4e5f-1514-2b3c4d5e6f7a
+            transform: U.CLAIM_ID
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7c8d9e0f-9900-4acb-0404-c8d9e0f1a2b3
+          stepCounter: 2b3c4d5e-2233-4f6a-2625-3c4d5e6f7a8b
+        config: {}
+        dataType: VARCHAR(50)
+        description: ""
+        name: TRANSACTION_TYPE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6f7a8b9c-8899-4d4e-d1d1-f7a8b9c0d1e2
+                stepCounter: 9e0f1a2b-9900-4c3d-f3f2-0f1a2b3c4d5e
+            transform: U.TRANSACTION_TYPE
+          - columnReferences:
+              - columnCounter: 3e4f5a6b-5566-4c9d-e2e2-e4f5a6b7c8d9
+                stepCounter: 0f1a2b3c-0011-4d4e-0403-1a2b3c4d5e6f
+            transform: U.TRANSACTION_TYPE
+          - columnReferences:
+              - columnCounter: 0d1e2f3a-2233-4b8c-f3f3-d1e2f3a4b5c6
+                stepCounter: 1a2b3c4d-1122-4e5f-1514-2b3c4d5e6f7a
+            transform: U.TRANSACTION_TYPE
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8d9e0f1a-0011-4bcc-1515-d9e0f1a2b3c4
+          stepCounter: 2b3c4d5e-2233-4f6a-2625-3c4d5e6f7a8b
+        config: {}
+        dataType: NUMBER(19,2)
+        description: ""
+        name: CONTROL_MEDICAL
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 7a8b9c0d-9900-4e5f-e2e2-a8b9c0d1e2f3
+                stepCounter: 9e0f1a2b-9900-4c3d-f3f2-0f1a2b3c4d5e
+            transform: U.CONTROL_MEDICAL
+          - columnReferences:
+              - columnCounter: 4f5a6b7c-6677-4dae-f3f3-f5a6b7c8d9e0
+                stepCounter: 0f1a2b3c-0011-4d4e-0403-1a2b3c4d5e6f
+            transform: U.CONTROL_MEDICAL
+          - columnReferences:
+              - columnCounter: 1e2f3a4b-3344-4c9d-0404-e2f3a4b5c6d7
+                stepCounter: 1a2b3c4d-1122-4e5f-1514-2b3c4d5e6f7a
+            transform: U.CONTROL_MEDICAL
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9e0f1a2b-1122-4cdd-2626-e0f1a2b3c4d5
+          stepCounter: 2b3c4d5e-2233-4f6a-2625-3c4d5e6f7a8b
+        config: {}
+        dataType: NUMBER(19,2)
+        description: ""
+        name: CONTROL_EXPENSE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8b9c0d1e-0011-4f6a-f3f3-b9c0d1e2f3a4
+                stepCounter: 9e0f1a2b-9900-4c3d-f3f2-0f1a2b3c4d5e
+            transform: U.CONTROL_EXPENSE
+          - columnReferences:
+              - columnCounter: 5a6b7c8d-7788-4ebf-0404-a6b7c8d9e0f1
+                stepCounter: 0f1a2b3c-0011-4d4e-0403-1a2b3c4d5e6f
+            transform: U.CONTROL_EXPENSE
+          - columnReferences:
+              - columnCounter: 2f3a4b5c-4455-4dae-1515-f3a4b5c6d7e8
+                stepCounter: 1a2b3c4d-1122-4e5f-1514-2b3c4d5e6f7a
+            transform: U.CONTROL_EXPENSE
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0f1a2b3c-2233-4dee-3737-f1a2b3c4d5e6
+          stepCounter: 2b3c4d5e-2233-4f6a-2625-3c4d5e6f7a8b
+        config: {}
+        dataType: NUMBER(19,2)
+        description: ""
+        name: CONTROL_COMP
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9c0d1e2f-1122-4a7b-0404-c0d1e2f3a4b5
+                stepCounter: 9e0f1a2b-9900-4c3d-f3f2-0f1a2b3c4d5e
+            transform: U.CONTROL_COMP
+          - columnReferences:
+              - columnCounter: 6b7c8d9e-8899-4fc0-1515-b7c8d9e0f1a2
+                stepCounter: 0f1a2b3c-0011-4d4e-0403-1a2b3c4d5e6f
+            transform: U.CONTROL_COMP
+          - columnReferences:
+              - columnCounter: 3a4b5c6d-5566-4ebf-2626-a4b5c6d7e8f9
+                stepCounter: 1a2b3c4d-1122-4e5f-1514-2b3c4d5e6f7a
+            transform: U.CONTROL_COMP
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1a2b3c4d-3344-4eff-4848-a2b3c4d5e6f7
+          stepCounter: 2b3c4d5e-2233-4f6a-2625-3c4d5e6f7a8b
+        config: {}
+        dataType: NUMBER(19,2)
+        description: ""
+        name: CONTROL_RECOVERY
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 0d1e2f3a-2233-4b8c-1515-d1e2f3a4b5c6
+                stepCounter: 9e0f1a2b-9900-4c3d-f3f2-0f1a2b3c4d5e
+            transform: U.CONTROL_RECOVERY
+          - columnReferences:
+              - columnCounter: 7c8d9e0f-9900-4a1b-2626-c8d9e0f1a2b3
+                stepCounter: 0f1a2b3c-0011-4d4e-0403-1a2b3c4d5e6f
+            transform: U.CONTROL_RECOVERY
+          - columnReferences:
+              - columnCounter: 4b5c6d7e-6677-4fc0-3737-b5c6d7e8f9a0
+                stepCounter: 1a2b3c4d-1122-4e5f-1514-2b3c4d5e6f7a
+            transform: U.CONTROL_RECOVERY
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2b3c4d5e-4455-4f0a-5959-b3c4d5e6f7a8
+          stepCounter: 2b3c4d5e-2233-4f6a-2625-3c4d5e6f7a8b
+        config: {}
+        dataType: NUMBER(19,2)
+        description: ""
+        name: CONTROL_TOTAL
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 1e2f3a4b-3344-4c9d-2626-e2f3a4b5c6d7
+                stepCounter: 9e0f1a2b-9900-4c3d-f3f2-0f1a2b3c4d5e
+            transform: U.CONTROL_TOTAL
+          - columnReferences:
+              - columnCounter: 8d9e0f1a-0011-4b2c-3737-d9e0f1a2b3c4
+                stepCounter: 0f1a2b3c-0011-4d4e-0403-1a2b3c4d5e6f
+            transform: U.CONTROL_TOTAL
+          - columnReferences:
+              - columnCounter: 5c6d7e8f-7788-4a1b-4848-c6d7e8f9a0b1
+                stepCounter: 1a2b3c4d-1122-4e5f-1514-2b3c4d5e6f7a
+            transform: U.CONTROL_TOTAL
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3c4d5e6f-5566-4a1b-6a6a-c4d5e6f7a8b9
+          stepCounter: 2b3c4d5e-2233-4f6a-2625-3c4d5e6f7a8b
+        config: {}
+        dataType: NUMBER(19,2)
+        description: ""
+        name: DB_MEDICAL
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 2f3a4b5c-4455-4dae-3737-f3a4b5c6d7e8
+                stepCounter: 9e0f1a2b-9900-4c3d-f3f2-0f1a2b3c4d5e
+            transform: U.DB_MEDICAL
+          - columnReferences:
+              - columnCounter: 9e0f1a2b-1122-4c3d-4848-e0f1a2b3c4d5
+                stepCounter: 0f1a2b3c-0011-4d4e-0403-1a2b3c4d5e6f
+            transform: U.DB_MEDICAL
+          - columnReferences:
+              - columnCounter: 6d7e8f9a-8899-4b2c-5959-d7e8f9a0b1c2
+                stepCounter: 1a2b3c4d-1122-4e5f-1514-2b3c4d5e6f7a
+            transform: U.DB_MEDICAL
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4d5e6f7a-6677-4b2c-7b7b-d5e6f7a8b9c0
+          stepCounter: 2b3c4d5e-2233-4f6a-2625-3c4d5e6f7a8b
+        config: {}
+        dataType: NUMBER(19,2)
+        description: ""
+        name: DB_EXPENSE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3a4b5c6d-5566-4ebf-4848-a4b5c6d7e8f9
+                stepCounter: 9e0f1a2b-9900-4c3d-f3f2-0f1a2b3c4d5e
+            transform: U.DB_EXPENSE
+          - columnReferences:
+              - columnCounter: 0f1a2b3c-2233-4d4e-5959-f1a2b3c4d5e6
+                stepCounter: 0f1a2b3c-0011-4d4e-0403-1a2b3c4d5e6f
+            transform: U.DB_EXPENSE
+          - columnReferences:
+              - columnCounter: 7e8f9a0b-9900-4c3d-6a6a-e8f9a0b1c2d3
+                stepCounter: 1a2b3c4d-1122-4e5f-1514-2b3c4d5e6f7a
+            transform: U.DB_EXPENSE
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5e6f7a8b-7788-4c3d-8c8c-e6f7a8b9c0d1
+          stepCounter: 2b3c4d5e-2233-4f6a-2625-3c4d5e6f7a8b
+        config: {}
+        dataType: NUMBER(19,2)
+        description: ""
+        name: DB_INDEMNITY
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4b5c6d7e-6677-4fc0-5959-b5c6d7e8f9a0
+                stepCounter: 9e0f1a2b-9900-4c3d-f3f2-0f1a2b3c4d5e
+            transform: U.DB_INDEMNITY
+          - columnReferences:
+              - columnCounter: 1a2b3c4d-3344-4e5f-6a6a-a2b3c4d5e6f7
+                stepCounter: 0f1a2b3c-0011-4d4e-0403-1a2b3c4d5e6f
+            transform: U.DB_INDEMNITY
+          - columnReferences:
+              - columnCounter: 8f9a0b1c-0011-4d4e-7b7b-f9a0b1c2d3e4
+                stepCounter: 1a2b3c4d-1122-4e5f-1514-2b3c4d5e6f7a
+            transform: U.DB_INDEMNITY
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6f7a8b9c-8899-4d4e-9d9d-f7a8b9c0d1e2
+          stepCounter: 2b3c4d5e-2233-4f6a-2625-3c4d5e6f7a8b
+        config: {}
+        dataType: NUMBER(19,2)
+        description: ""
+        name: DB_RECOVERY
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5c6d7e8f-7788-4a1b-6a6a-c6d7e8f9a0b1
+                stepCounter: 9e0f1a2b-9900-4c3d-f3f2-0f1a2b3c4d5e
+            transform: U.DB_RECOVERY
+          - columnReferences:
+              - columnCounter: 2b3c4d5e-4455-4f6a-7b7b-b3c4d5e6f7a8
+                stepCounter: 0f1a2b3c-0011-4d4e-0403-1a2b3c4d5e6f
+            transform: U.DB_RECOVERY
+          - columnReferences:
+              - columnCounter: 9a0b1c2d-1122-4e5f-8c8c-a0b1c2d3e4f5
+                stepCounter: 1a2b3c4d-1122-4e5f-1514-2b3c4d5e6f7a
+            transform: U.DB_RECOVERY
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7a8b9c0d-9900-4e5f-aeae-a8b9c0d1e2f3
+          stepCounter: 2b3c4d5e-2233-4f6a-2625-3c4d5e6f7a8b
+        config: {}
+        dataType: NUMBER(19,2)
+        description: ""
+        name: DB_TOTAL
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6d7e8f9a-8899-4b2c-7b7b-d7e8f9a0b1c2
+                stepCounter: 9e0f1a2b-9900-4c3d-f3f2-0f1a2b3c4d5e
+            transform: U.DB_TOTAL
+          - columnReferences:
+              - columnCounter: 3c4d5e6f-5566-4a7b-8c8c-c4d5e6f7a8b9
+                stepCounter: 0f1a2b3c-0011-4d4e-0403-1a2b3c4d5e6f
+            transform: U.DB_TOTAL
+          - columnReferences:
+              - columnCounter: 0b1c2d3e-2233-4f6a-9d9d-b1c2d3e4f5a6
+                stepCounter: 1a2b3c4d-1122-4e5f-1514-2b3c4d5e6f7a
+            transform: U.DB_TOTAL
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8b9c0d1e-0011-4f6a-bfbf-b9c0d1e2f3a4
+          stepCounter: 2b3c4d5e-2233-4f6a-2625-3c4d5e6f7a8b
+        config: {}
+        dataType: NUMBER(19,2)
+        description: ""
+        name: DIFF_MEDICAL
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 7e8f9a0b-9900-4c3d-8c8c-e8f9a0b1c2d3
+                stepCounter: 9e0f1a2b-9900-4c3d-f3f2-0f1a2b3c4d5e
+            transform: U.DIFF_MEDICAL
+          - columnReferences:
+              - columnCounter: 4d5e6f7a-6677-4b8c-9d9d-d5e6f7a8b9c0
+                stepCounter: 0f1a2b3c-0011-4d4e-0403-1a2b3c4d5e6f
+            transform: U.DIFF_MEDICAL
+          - columnReferences:
+              - columnCounter: 1c2d3e4f-3344-4a7b-aeae-c2d3e4f5a6b7
+                stepCounter: 1a2b3c4d-1122-4e5f-1514-2b3c4d5e6f7a
+            transform: U.DIFF_MEDICAL
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9c0d1e2f-1122-4a7b-c0c0-c0d1e2f3a4b5
+          stepCounter: 2b3c4d5e-2233-4f6a-2625-3c4d5e6f7a8b
+        config: {}
+        dataType: NUMBER(19,2)
+        description: ""
+        name: DIFF_EXPENSE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8f9a0b1c-0011-4d4e-9d9d-f9a0b1c2d3e4
+                stepCounter: 9e0f1a2b-9900-4c3d-f3f2-0f1a2b3c4d5e
+            transform: U.DIFF_EXPENSE
+          - columnReferences:
+              - columnCounter: 5e6f7a8b-7788-4c9d-aeae-e6f7a8b9c0d1
+                stepCounter: 0f1a2b3c-0011-4d4e-0403-1a2b3c4d5e6f
+            transform: U.DIFF_EXPENSE
+          - columnReferences:
+              - columnCounter: 2d3e4f5a-4455-4b8c-bfbf-d3e4f5a6b7c8
+                stepCounter: 1a2b3c4d-1122-4e5f-1514-2b3c4d5e6f7a
+            transform: U.DIFF_EXPENSE
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0d1e2f3a-2233-4b8c-d1d1-d1e2f3a4b5c6
+          stepCounter: 2b3c4d5e-2233-4f6a-2625-3c4d5e6f7a8b
+        config: {}
+        dataType: NUMBER(19,2)
+        description: ""
+        name: DIFF_COMP
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9a0b1c2d-1122-4e5f-aeae-a0b1c2d3e4f5
+                stepCounter: 9e0f1a2b-9900-4c3d-f3f2-0f1a2b3c4d5e
+            transform: U.DIFF_COMP
+          - columnReferences:
+              - columnCounter: 6f7a8b9c-8899-4dae-bfbf-f7a8b9c0d1e2
+                stepCounter: 0f1a2b3c-0011-4d4e-0403-1a2b3c4d5e6f
+            transform: U.DIFF_COMP
+          - columnReferences:
+              - columnCounter: 3e4f5a6b-5566-4c9d-c0c0-e4f5a6b7c8d9
+                stepCounter: 1a2b3c4d-1122-4e5f-1514-2b3c4d5e6f7a
+            transform: U.DIFF_COMP
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1e2f3a4b-3344-4c9d-e2e2-e2f3a4b5c6d7
+          stepCounter: 2b3c4d5e-2233-4f6a-2625-3c4d5e6f7a8b
+        config: {}
+        dataType: NUMBER(19,2)
+        description: ""
+        name: DIFF_RECOVERY
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 0b1c2d3e-2233-4f6a-bfbf-b1c2d3e4f5a6
+                stepCounter: 9e0f1a2b-9900-4c3d-f3f2-0f1a2b3c4d5e
+            transform: U.DIFF_RECOVERY
+          - columnReferences:
+              - columnCounter: 7a8b9c0d-9900-4ebf-c0c0-a8b9c0d1e2f3
+                stepCounter: 0f1a2b3c-0011-4d4e-0403-1a2b3c4d5e6f
+            transform: U.DIFF_RECOVERY
+          - columnReferences:
+              - columnCounter: 4f5a6b7c-6677-4dae-d1d1-f5a6b7c8d9e0
+                stepCounter: 1a2b3c4d-1122-4e5f-1514-2b3c4d5e6f7a
+            transform: U.DIFF_RECOVERY
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2f3a4b5c-4455-4dae-f3f3-f3a4b5c6d7e8
+          stepCounter: 2b3c4d5e-2233-4f6a-2625-3c4d5e6f7a8b
+        config: {}
+        dataType: NUMBER(19,2)
+        description: ""
+        name: DIFF_TOTAL
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 1c2d3e4f-3344-4a7b-c0c0-c2d3e4f5a6b7
+                stepCounter: 9e0f1a2b-9900-4c3d-f3f2-0f1a2b3c4d5e
+            transform: U.DIFF_TOTAL
+          - columnReferences:
+              - columnCounter: 8b9c0d1e-0011-4fc0-d1d1-b9c0d1e2f3a4
+                stepCounter: 0f1a2b3c-0011-4d4e-0403-1a2b3c4d5e6f
+            transform: U.DIFF_TOTAL
+          - columnReferences:
+              - columnCounter: 5a6b7c8d-7788-4ebf-e2e2-a6b7c8d9e0f1
+                stepCounter: 1a2b3c4d-1122-4e5f-1514-2b3c4d5e6f7a
+            transform: U.DIFF_TOTAL
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases: {}
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: DBSHIFT
+            nodeName: STG_VIEW_PAYMENT_MISMATCH
+          - locationName: DBSHIFT
+            nodeName: STG_VIEW_RESERVE_MISMATCH
+          - locationName: DBSHIFT
+            nodeName: STG_VIEW_RECOVERY_MISMATCH
+        join:
+          joinCondition: |
+            FROM (
+              SELECT * FROM {{ ref('DBSHIFT','STG_VIEW_PAYMENT_MISMATCH') }}
+              UNION ALL
+              SELECT * FROM {{ ref('DBSHIFT','STG_VIEW_RESERVE_MISMATCH') }}
+              UNION ALL
+              SELECT * FROM {{ ref('DBSHIFT','STG_VIEW_RECOVERY_MISMATCH') }}
+            ) AS U
+        name: STG_COMBINED_MISMATCH
+        noLinkRefs: []
+  name: STG_COMBINED_MISMATCH
+  overrideSQL: false
+  schema: ""
+  sqlType: Stage
+  type: sql
+  version: 1
+type: Node
