@@ -1,0 +1,4243 @@
+fileVersion: 1
+id: 566e9499-c831-4191-881b-513fd3f4fc44
+name: ACA_TRANSACTION_CLAIM
+operation:
+  config:
+    insertStrategy: INSERT
+    postSQL: |-
+      BEGIN
+        CLOSE SYMMETRIC KEY SYMMETRICKEY1;
+      END
+    preSQL: |-
+      BEGIN
+        OPEN SYMMETRIC KEY SYMMETRICKEY1 DECRYPTION BY CERTIFICATE CERTIFICATE1;
+      END
+    testsEnabled: true
+    truncateBefore: false
+  database: ALLIANT_CLAIMS_ASTRUS
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: DBSHIFT
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: e5ac0b38-d98c-48d6-953e-52f085ca939f
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: CLIENT_NUMBER
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 322c9b68-6934-4530-80be-b43a9f0cd547
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.CLIENT_NUMBER
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c02c11e7-f131-4171-ab7d-8153408a0d4c
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: ACCIDENT_NUMBER
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: bf8a91a9-34da-4447-9f79-c70e0a5ca4eb
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.ACCIDENT_NUMBER
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 97f374e2-6366-4196-adac-71e186e804f5
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: CLAIM_COVERAGE_CODE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 935c15df-6a6c-4ec7-bb19-09415849ddfe
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.CLAIM_COVERAGE_CODE
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2f7c040d-c052-47fd-89de-d9614457e5b5
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: CLAIM_SEQUENCE_NUMBER
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3b0c51d9-5f11-4475-ab1b-77085a6a9b40
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.CLAIM_SEQUENCE_NUMBER
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c0a21855-6b89-4e00-8806-69d5f75e82b7
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: UNIQUE_CLAIM_ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 2d1e2e6c-7e5c-4860-911e-2ac935f11f4d
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.UNIQUE_CLAIM_ID
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: a63d1a47-a8b2-4d2d-a2f0-77a3d3c8c7c9
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: TRANSACTION_SEQUENCE_NUMBER
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b7096b79-566d-4952-b9e7-51543666b6c0
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.TRANSACTION_SEQUENCE_NUMBER
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: e827d099-282e-4e4f-b4de-12e039474775
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: DATETIME
+        description: ""
+        name: TRANSACTION_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5202ed99-272e-4b6b-83c8-69335808779b
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.TRANSACTION_DATE
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 934d40ab-444a-4c28-bbcd-cd96c954e3d7
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: RECIPIENT_NUMBER
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5f187315-9988-44fc-a20c-55c68d184074
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.RECIPIENT_NUMBER
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: b13c1c9b-6e7b-40b9-9a7c-a0e28d8b4e76
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: RECORD_TYPE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 63e3d294-811c-4235-86b6-391e453715df
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.RECORD_TYPE
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c1cd21d1-67f7-4340-9a3d-3b749d609282
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: DATE_TYPE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8dd0ed11-9a99-4a00-9883-8a3c89c4d941
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.DATE_TYPE
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: eb9950d8-55a0-4fc7-b4d4-c9ac2d5f0432
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: RECIPIENT_INFORMATION
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e5e51147-380d-4508-b9a3-5ed8bb41203d
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.RECIPIENT_INFORMATION
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 934d40ab-444a-4c28-bbcd-cd96c954e3da
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: CLAIM_CROSS_REFERENCE_NUMBER
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 569e2c69-2f7f-4b02-aa1b-80df2a61ddbc
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.CLAIM_CROSS_REFERENCE_NUMBER
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: e827d099-282e-4e4f-b4de-12e039474776
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: POLICY_NUMBER
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f7c6d59b-59b4-4b55-a05e-88439ac1219b
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.POLICY_NUMBER
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: b13c1c9b-6e7b-40b9-9a7c-a0e28d8b4e77
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: DATETIME
+        description: ""
+        name: POLICY_EFFECTIVE_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c01a61c3-2a42-494b-a010-449e7b231eb9
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.POLICY_EFFECTIVE_DATE
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c1cd21d1-67f7-4340-9a3d-3b749d609283
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: DATETIME
+        description: ""
+        name: POLICY_EXPIRATION_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3267fc63-b1d7-463d-ae85-442a00c6114e
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.POLICY_EXPIRATION_DATE
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: eb9950d8-55a0-4fc7-b4d4-c9ac2d5f0433
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: RECIPIENT_OPTIONAL_INFORMATION
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c5c454e9-eb66-419b-b9f1-a1288c42a275
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.RECIPIENT_OPTIONAL_INFORMATION
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 934d40ab-444a-4c28-bbcd-cd96c954e3db
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: CLAIM_STATUS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e82e16a2-6839-44e2-8b64-555e0c657fc6
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.CLAIM_STATUS
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: e827d099-282e-4e4f-b4de-12e039474777
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: CLAIM_STATUS_DESCRIPTION
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 2d3345d8-c845-42a1-a67b-1ec44e735467
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.CLAIM_STATUS_DESCRIPTION
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: b13c1c9b-6e7b-40b9-9a7c-a0e28d8b4e78
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: DATETIME
+        description: ""
+        name: STATUS_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 191636c2-b9e3-4d40-b6c8-ab8be993b3f2
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.STATUS_DATE
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c1cd21d1-67f7-4340-9a3d-3b749d609284
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: DATETIME
+        description: ""
+        name: ACCIDENT_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: bc6210f9-90b5-4b0c-99f6-11f81c96a583
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: TRY_CAST(STG.ACCIDENT_DATE AS DATETIME)
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: eb9950d8-55a0-4fc7-b4d4-c9ac2d5f0434
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: ACCIDENT_DAY_OF_WEEK
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 93450e18-124b-4830-a807-657ac7a9d0a6
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.ACCIDENT_DAY_OF_WEEK
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 934d40ab-444a-4c28-bbcd-cd96c954e3dc
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: DATETIME
+        description: ""
+        name: CLAIM_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d7572d49-43c2-475a-a329-847e19379201
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.CLAIM_DATE
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: e827d099-282e-4e4f-b4de-12e039474778
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: CLAIM
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ebddb877-d4f1-4fd8-98e3-b3c971037599
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.CLAIM
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: b13c1c9b-6e7b-40b9-9a7c-a0e28d8b4e79
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: ACCIDENT_TYPE_CODE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e0b5220c-c609-40aa-bc1d-b873d6b04323
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.ACCIDENT_TYPE_CODE
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c1cd21d1-67f7-4340-9a3d-3b749d609285
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: ACCIDENT_SOURCE_CODE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3a165b6f-7557-4180-a352-875f56b0f913
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.ACCIDENT_SOURCE_CODE
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: eb9950d8-55a0-4fc7-b4d4-c9ac2d5f0435
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: ACCIDENT_CAUSE_CODE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: df3138b3-19bd-464a-a226-c22646c0590a
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.ACCIDENT_CAUSE_CODE
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 934d40ab-444a-4c28-bbcd-cd96c954e3dd
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: PART_OF_BODY_CODE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d1e7d953-b265-4f36-9b16-e5c9a4130edc
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.PART_OF_BODY_CODE
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: e827d099-282e-4e4f-b4de-12e039474779
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: NATURE_OF_LOSS_CODE_PROPERTY_DAMAGE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 2d19f697-7c70-4f51-b0e2-63b782c5f10b
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.NATURE_OF_LOSS_CODE_PROPERTY_DAMAGE
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: b13c1c9b-6e7b-40b9-9a7c-a0e28d8b4e80
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: NATURE_OF_LOSS_CODE_BODILY_INJURY
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6b5c00e6-ec08-410a-b337-67b12d8a43f8
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.NATURE_OF_LOSS_CODE_BODILY_INJURY
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c1cd21d1-67f7-4340-9a3d-3b749d609286
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: RESERVE_TYPE_CODE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8b0c9533-e51f-4ff0-a292-1a6245089304
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.RESERVE_TYPE_CODE
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: eb9950d8-55a0-4fc7-b4d4-c9ac2d5f0436
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: METHOD_OF_SETTLEMENT
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a63d414e-065a-4b71-b552-094142f707f5
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.METHOD_OF_SETTLEMENT
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 934d40ab-444a-4c28-bbcd-cd96c954e3de
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: CONVERT_CODE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 906231bd-578d-4f7f-8567-27e1f4864c8d
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.CONVERT_CODE
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: e827d099-282e-4e4f-b4de-12e039474780
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: NCCI_LOSS_COVERAGE_CODE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a7838531-1b05-4f40-8b9a-4f51e2c949be
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.NCCI_LOSS_COVERAGE_CODE
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: b13c1c9b-6e7b-40b9-9a7c-a0e28d8b4e81
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: DESCRIPTION_OF_LOSS_ENCRYPTED
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e82e185c-15bb-4115-9c59-ac04471cd6c2
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.DESCRIPTION_OF_LOSS
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c1cd21d1-67f7-4340-9a3d-3b749d609287
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: YEAR_LAST_EXPOSED
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 63e00552-32a2-4a0b-80a2-23363072225f
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.YEAR_LAST_EXPOSED
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: eb9950d8-55a0-4fc7-b4d4-c9ac2d5f0437
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: ACCIDENT_STATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9c28e833-dd1d-4078-a477-bbcc8b5e9cf1
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.ACCIDENT_STATE
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 934d40ab-444a-4c28-bbcd-cd96c954e3df
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: ACCIDENT_COUNTRY
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ad6a0c0a-6e54-47cd-9e33-72793237e174
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.ACCIDENT_COUNTRY
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: e827d099-282e-4e4f-b4de-12e039474781
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: BENEFIT_JURISDICTION_STATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ca4fc847-19fd-4f05-aa72-a42e556e431c
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.BENEFIT_JURISDICTION_STATE
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: b13c1c9b-6e7b-40b9-9a7c-a0e28d8b4e82
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: BENEFIT_JURISDICTION_COUNTRY
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a6c30386-896c-4861-a0d7-2195f2a1b9d4
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.BENEFIT_JURISDICTION_COUNTRY
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c1cd21d1-67f7-4340-9a3d-3b749d609288
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: EXPOSURE_STATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3abcc32e-13c5-4d7a-8d7b-402830f3c5aa
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.EXPOSURE_STATE
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: eb9950d8-55a0-4fc7-b4d4-c9ac2d5f0438
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: EXPOSURE_COUNTRY
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9c016f46-5fde-493e-90f7-526437d2f446
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.EXPOSURE_COUNTRY
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 934d40ab-444a-4c28-bbcd-cd96c954e3e0
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: STATE_CLAIM_NUMBER
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5971e411-94eb-4a25-a7b6-c958d515f403
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.STATE_CLAIM_NUMBER
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: e827d099-282e-4e4f-b4de-12e039474782
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: DATETIME
+        description: ""
+        name: EMPLOYER_NOTIFICIATION_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e874a9b7-1c4b-4dfc-b636-edb41c0e3532
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.EMPLOYER_NOTIFICIATION_DATE
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: b13c1c9b-6e7b-40b9-9a7c-a0e28d8b4e83
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: DATETIME
+        description: ""
+        name: ORIGINAL_OPEN_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3262d1a3-2c1a-4286-9818-8f85f1c4e793
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.ORIGINAL_OPEN_DATE
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c1cd21d1-67f7-4340-9a3d-3b749d609289
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: DATETIME
+        description: ""
+        name: REPORTED_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9789725f-2c32-4740-8197-23dd5f0e9b94
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: TRY_CAST(STG.REPORTED_DATE AS DATETIME)
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: eb9950d8-55a0-4fc7-b4d4-c9ac2d5f0439
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: LEGAL_FIRM_ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 93551e18-d7b1-4b17-a006-2184e5a95b3d
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.LEGAL_FIRM_ID
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 934d40ab-444a-4c28-bbcd-cd96c954e3e1
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: INSUIT_FLAG
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f5d779c1-7448-4389-9e8a-8a5ffbf8b6c0
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.IN_SUIT_FLAG
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: e827d099-282e-4e4f-b4de-12e039474783
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: INDEPENDENT_ADJUSTER_ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f7d305de-8785-4429-b695-17180fd1e42f
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.INDEPENDENT_ADJUSTER_ID
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: b13c1c9b-6e7b-40b9-9a7c-a0e28d8b4e84
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: VEHICLE_IDENTIFICATION_NUMBER_ENCRYPTED
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3dd5098e-473c-443b-82a9-d6981cf0058e
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.VEHICLE_IDENTIFICATION_NUMBER
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c1cd21d1-67f7-4340-9a3d-3b749d609290
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: DRIVER_CHARGEABLE_FLAG
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a63b782b-8a19-4b6c-b3a1-7c961e6c3829
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.DRIVER_CHARGEABLE_FLAG
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: eb9950d8-55a0-4fc7-b4d4-c9ac2d5f0440
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: SURGERY_FLAG
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c035b446-0b1a-48a0-bb6f-998846c483a9
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.SURGERY_FLAG
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 934d40ab-444a-4c28-bbcd-cd96c954e3e2
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: CLAIM_ADJUSTING_BRANCH_NUMBER
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 2d1ab5a7-96a1-4389-9430-c3d5964f780e
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.CLAIM_ADJUSTING_BRANCH_NUMBER
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: e827d099-282e-4e4f-b4de-12e039474784
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: EMPLOYER_PREMISES_FLAG
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e8051784-7a91-49b8-b80c-03d526e3c032
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.EMPLOYER_PREMISES_FLAG
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: b13c1c9b-6e7b-40b9-9a7c-a0e28d8b4e85
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: ADJUSTER_NUMBER
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: bc658399-69e1-4c11-9a74-d02f5e714101
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.ADJUSTER_NUMBER
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c1cd21d1-67f7-4340-9a3d-3b749d609291
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: REVIEWER_NUMBER
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: caa141b7-b088-4660-844c-cd2f993d56d7
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.REVIEWER_NUMBER
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: eb9950d8-55a0-4fc7-b4d4-c9ac2d5f0441
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: ADJUSTER_REVIEW_FREQUENCY
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3a9a14de-c8e1-4876-b6d3-2f2759e992cc
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.ADJUSTER_REVIEW_FREQUENCY
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 934d40ab-444a-4c28-bbcd-cd96c954e3e3
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: REVIEWER_REVIEW_FREQUENCY
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 60a4f5f9-a864-4e4b-8e1f-49ff411a0c4f
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.REVIEWER_REVIEW_FREQUENCY
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: e827d099-282e-4e4f-b4de-12e039474785
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: NUMBER_OF_DEPENDENTS_FLAG
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 091f09e6-f831-419b-b5e5-3914a275464f
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.NUMBER_OF_DEPENDENTS_FLAG
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: b13c1c9b-6e7b-40b9-9a7c-a0e28d8b4e86
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: ORIGINAL_DAMAGE_ESTIMATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 935cdccf-f851-40ef-871d-f8f4a0b36873
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.ORIGINAL_DAMAGE_ESTIMATE
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c1cd21d1-67f7-4340-9a3d-3b749d609292
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: BILLING_CODE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a6312a0d-2b45-4200-a178-57d6928e4695
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.BILLING_CODE
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: eb9950d8-55a0-4fc7-b4d4-c9ac2d5f0442
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: CLAIMANT_NAME_FORMAT
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 569d4bd4-6f01-4470-a36c-9a41bd26251b
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.CLAIMANT_NAME_FORMAT
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 934d40ab-444a-4c28-bbcd-cd96c954e3e4
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: CLAIMANT_LASTNAME_ENCRYPTED
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5543329f-331c-4389-9cf9-7815d2a93145
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.CLAIMANT_LASTNAME
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: e827d099-282e-4e4f-b4de-12e039474786
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: CLAIMANT_FIRSTNAME
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8d1f054b-d7d4-48ac-a33d-c78204652431
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.CLAIMANT_FIRSTNAME
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: b13c1c9b-6e7b-40b9-9a7c-a0e28d8b4e87
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: CLAIMANT_ORGANIZATION_NAME_ENCRYPTED
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 1f0e498c-8c0c-4027-aa4e-c55a5fd56b23
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.CLAIMANT_ORGANIZATION_NAME
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c1cd21d1-67f7-4340-9a3d-3b749d609293
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: CLAIMANT_ADDRESS_ENCRYPTED
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 1789c622-c3f2-4416-b185-3b1a8d38ca8a
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.CLAIMANT_ADDRESS
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: eb9950d8-55a0-4fc7-b4d4-c9ac2d5f0443
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: CLAIMANT_CITY
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 95537651-de05-4f46-86c5-e55541c48fca
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.CLAIMANT_CITY
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 934d40ab-444a-4c28-bbcd-cd96c954e3e5
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: CLAIMANT_STATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a63e635f-4607-4e6a-b620-1a61048b6c43
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.CLAIMANT_STATE
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: e827d099-282e-4e4f-b4de-12e039474787
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: CLAIMANT_COUNTRY
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 177d0793-68e4-4458-97f2-a0b4cd48a58a
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.CLAIMANT_COUNTRY
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: b13c1c9b-6e7b-40b9-9a7c-a0e28d8b4e88
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: CLAIMANT_ZIPCODE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6361a6b0-13f5-46ae-bc63-149ed4e04866
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.CLAIMANT_ZIPCODE
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c1cd21d1-67f7-4340-9a3d-3b749d609294
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: CLAIMANT_AGE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: bdc20579-d6e2-45e3-982c-47a83c18b704
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.CLAIMANT_AGE
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: eb9950d8-55a0-4fc7-b4d4-c9ac2d5f0444
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: CLAIMANT_SEX
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: bcd76865-c466-419b-b0b8-c33583626e95
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.CLAIMANT_SEX
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 934d40ab-444a-4c28-bbcd-cd96c954e3e6
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: CLAIMANT_SOCIALSECURITYNUMBER_ENCRYPTED
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8b0c4415-f538-4033-bbde-1a8508e6f30a
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.CLAIMANT_SOCIALSECURITYNUMBER
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: e827d099-282e-4e4f-b4de-12e039474788
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: CLAIMANT_AVERAGE_WEEKLY_WAGE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 1e9d1e3d-74d1-41ee-a859-42b7c7b270a4
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.CLAIMANT_AVERAGE_WEEKLY_WAGE
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: b13c1c9b-6e7b-40b9-9a7c-a0e28d8b4e89
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: CLAIMANT_NCCI_JOB_CLASSIFICATION
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a63d1a47-a8b2-4d2d-a2f0-77a3d3c8c7c7
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.CLAIMANT_NCCI_JOB_CLASSIFICATION
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c1cd21d1-67f7-4340-9a3d-3b749d609295
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: CLAIMANT_LENGTH_OF_SERVICE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a58e576b-4b14-41d3-9f50-3d58a52de1d5
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.CLAIMANT_LENGTH_OF_SERVICE
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: eb9950d8-55a0-4fc7-b4d4-c9ac2d5f0445
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: CONTROVERTED_CASE_FLAG
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 7c0205d1-165f-4a37-b67e-40cc2479e006
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.CONTROVERTED_CASE_FLAG
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 934d40ab-444a-4c28-bbcd-cd96c954e3e7
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: DATETIME
+        description: ""
+        name: HIRE_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3b1e7f60-91a5-48b5-9f2d-875f532f2759
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.HIRE_DATE
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: e827d099-282e-4e4f-b4de-12e039474789
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: EMPLOYMENT_STATUS_FLAG
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 0ccf2603-bdc2-4828-ba7d-b108990d1f1c
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.EMPLOYMENT_STATUS_FLAG
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: b13c1c9b-6e7b-40b9-9a7c-a0e28d8b4e90
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: DATETIME
+        description: ""
+        name: BIRTH_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a631df6a-129b-4497-a75d-556b62788c03
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.BIRTH_DATE
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c1cd21d1-67f7-4340-9a3d-3b749d609296
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: DEATH_DATE_ENCRYPTED
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a63f7396-e23f-42b7-a3ed-3375b6cd3b4b
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.DEATH_DATE
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: eb9950d8-55a0-4fc7-b4d4-c9ac2d5f0446
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: MARITAL_STATUS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9c03b127-14e3-4d6b-80a5-298e82ed32ab
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.MARITAL_STATUS
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 934d40ab-444a-4c28-bbcd-cd96c954e3e8
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: NUMBER_OF_DEPENDENTS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b7043329-3738-4e8c-8c5e-88c99849514b
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.NUMBER_OF_DEPENDENTS
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: e827d099-282e-4e4f-b4de-12e039474790
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: EMPLOYEE_IDENTIFICATION_NUMBER_ENCRYPTED
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b13c6e1e-f3b1-4f7f-8d9e-c8cd5d5a805f
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.EMPLOYEE_IDENTIFICATION_NUMBER
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: b13c1c9b-6e7b-40b9-9a7c-a0e28d8b4e91
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: EMPLOYEE_DEPARTMENT
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c1cd21d1-67f7-4340-9a3d-3b749d60927e
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.EMPLOYEE_DEPARTMENT
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c1cd21d1-67f7-4340-9a3d-3b749d609297
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: EMPLOYEE_OCCUPATION
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: eb9950d8-55a0-4fc7-b4d4-c9ac2d5f042e
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.EMPLOYEE_OCCUPATION
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: eb9950d8-55a0-4fc7-b4d4-c9ac2d5f0447
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: COMPENSATION_RATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 934d40ab-444a-4c28-bbcd-cd96c954e3d5
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.COMPENSATION_RATE
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 934d40ab-444a-4c28-bbcd-cd96c954e3e9
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: NCCI_INJURY_CODE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e827d099-282e-4e4f-b4de-12e039474771
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.NCCI_INJURY_CODE
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: e827d099-282e-4e4f-b4de-12e039474791
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: CLAIMANT_PHONE_NUMBER_ENCRYPTED
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b13c1c9b-6e7b-40b9-9a7c-a0e28d8b4e72
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.CLAIMANT_PHONE_NUMBER
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: b13c1c9b-6e7b-40b9-9a7c-a0e28d8b4e92
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: DATETIME
+        description: ""
+        name: DISABILITY_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a63d1a47-a8b2-4d2d-a2f0-77a3d3c8c7c8
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.DISABILITY_DATE
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c1cd21d1-67f7-4340-9a3d-3b749d609298
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: DATETIME
+        description: ""
+        name: RETURN_TO_WORK_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e827d099-282e-4e4f-b4de-12e039474772
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.RETURN_TO_WORK_DATE
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: eb9950d8-55a0-4fc7-b4d4-c9ac2d5f0448
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: DATETIME
+        description: ""
+        name: MAX_MEDICAL_IMPROVEMENT_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 934d40ab-444a-4c28-bbcd-cd96c954e3d6
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.MAX_MEDICAL_IMPROVEMENT_DATE
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: e5ac0b38-d98c-48d6-953e-52f085ca939f
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: ATTORNEY_AUTHORIZED_REPRESENTATIVE_FLAG
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b13c1c9b-6e7b-40b9-9a7c-a0e28d8b4e73
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.ATTORNEY_AUTHORIZED_REPRESENTATIVE_FLAG
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c02c11e7-f131-4171-ab7d-8153408a0d4c
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: POST_INJURY_WEEKLY_WAGE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c1cd21d1-67f7-4340-9a3d-3b749d60927f
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.POST_INJURY_WEEKLY_WAGE
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 97f374e2-6366-4196-adac-71e186e804f5
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: PERCENTAGE_OF_IMPAIRMENT
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: eb9950d8-55a0-4fc7-b4d4-c9ac2d5f042f
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.PERCENTAGE_OF_IMPAIRMENT
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2f7c040d-c052-47fd-89de-d9614457e5b5
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: ACCIDENT_CITY_CODE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 934d40ab-444a-4c28-bbcd-cd96c954e3d7
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.ACCIDENT_CITY_CODE
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c0a21855-6b89-4e00-8806-69d5f75e82b7
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: FULL_STATE_CLAIM_NUMBER
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e827d099-282e-4e4f-b4de-12e039474773
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.FULL_STATE_CLAIM_NUMBER
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: a63d1a47-a8b2-4d2d-a2f0-77a3d3c8c7c9
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: INSURER_NAME
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b13c1c9b-6e7b-40b9-9a7c-a0e28d8b4e74
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.INSURER_NAME
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: e827d099-282e-4e4f-b4de-12e039474775
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: REDUCED_AMOUNT_BENEFIT_CODE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c1cd21d1-67f7-4340-9a3d-3b749d609280
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.REDUCED_AMOUNT_BENEFIT_CODE
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 934d40ab-444a-4c28-bbcd-cd96c954e3d7
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: EMPLOYEES_OCCUPATION_50BYTES
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: eb9950d8-55a0-4fc7-b4d4-c9ac2d5f0430
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.EMPLOYEES_OCCUPATION_50_BYTES
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: b13c1c9b-6e7b-40b9-9a7c-a0e28d8b4e76
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: WORKERS_COMPENSATION_CLAIMTYPE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 934d40ab-444a-4c28-bbcd-cd96c954e3d8
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.WORKERS_COMPENSATION_CLAIM_TYPE
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c1cd21d1-67f7-4340-9a3d-3b749d609282
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: OTHER_WEEKLY_PAYMENTS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e827d099-282e-4e4f-b4de-12e039474774
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.OTHER_WEEKLY_PAYMENTS
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: eb9950d8-55a0-4fc7-b4d4-c9ac2d5f0432
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: ACCIDENT_ZIPCODE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b13c1c9b-6e7b-40b9-9a7c-a0e28d8b4e75
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.ACCIDENT_ZIP_CODE
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 934d40ab-444a-4c28-bbcd-cd96c954e3da
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: DATETIME
+        description: ""
+        name: ATTORNEY_DISCLOSURE_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c1cd21d1-67f7-4340-9a3d-3b749d609281
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.ATTORNEY_DISCLOSURE_DATE
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: e827d099-282e-4e4f-b4de-12e039474776
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: SALVAGE_RECOVERY_POTENTIAL
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: eb9950d8-55a0-4fc7-b4d4-c9ac2d5f0431
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.SALVAGE_RECOVERY_POTENTIAL
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: b13c1c9b-6e7b-40b9-9a7c-a0e28d8b4e77
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: SUBROGATION_RECOVERY_POTENTIAL
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 934d40ab-444a-4c28-bbcd-cd96c954e3d9
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.SUBROGATION_RECOVERY_POTENTIAL
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c1cd21d1-67f7-4340-9a3d-3b749d609283
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: STATE_FUND_RECOVERY_POTENTIAL
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e827d099-282e-4e4f-b4de-12e039474775
+                stepCounter: 58872b7d-60a
+--- START OF FILE: nodes/ACA_TRANSACTION_CLAIM.yml ---
+fileVersion: 1
+id: 566e9499-c831-4191-881b-513fd3f4fc44
+name: ACA_TRANSACTION_CLAIM
+operation:
+  config:
+    insertStrategy: INSERT
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: true
+    truncateBefore: false
+  database: ALLIANT_CLAIMS_ASTRUS
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: DBSHIFT
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: e5ac0b38-d98c-48d6-953e-52f085ca939f
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: CLIENT_NUMBER
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 322c9b68-6934-4530-80be-b43a9f0cd547
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.CLIENT_NUMBER
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c02c11e7-f131-4171-ab7d-8153408a0d4c
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: ACCIDENT_NUMBER
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: bf8a91a9-34da-4447-9f79-c70e0a5ca4eb
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.ACCIDENT_NUMBER
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 97f374e2-6366-4196-adac-71e186e804f5
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: CLAIM_COVERAGE_CODE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 935c15df-6a6c-4ec7-bb19-09415849ddfe
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.CLAIM_COVERAGE_CODE
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2f7c040d-c052-47fd-89de-d9614457e5b5
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: CLAIM_SEQUENCE_NUMBER
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3b0c51d9-5f11-4475-ab1b-77085a6a9b40
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.CLAIM_SEQUENCE_NUMBER
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c0a21855-6b89-4e00-8806-69d5f75e82b7
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: UNIQUE_CLAIM_ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 2d1e2e6c-7e5c-4860-911e-2ac935f11f4d
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.UNIQUE_CLAIM_ID
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3ff5d6a2-944c-42c2-ab8a-4934a4143a59
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: TRANSACTION_SEQUENCE_NUMBER
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b7096b79-566d-4952-b9e7-51543666b6c0
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.TRANSACTION_SEQUENCE_NUMBER
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: d1662991-62c0-4318-8686-35ca74411126
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: DATETIME
+        description: ""
+        name: TRANSACTION_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5202ed99-272e-4b6b-83c8-69335808779b
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.TRANSACTION_DATE
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: f287669d-2396-4cd1-bc19-1c9f8072714c
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: RECIPIENT_NUMBER
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5f187315-9988-44fc-a20c-55c68d184074
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.RECIPIENT_NUMBER
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 51b8c26f-96a8-4221-a078-4384d7a8d011
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: RECORD_TYPE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 63e3d294-811c-4235-86b6-391e453715df
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.RECORD_TYPE
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 474f2d59-8353-481d-bf19-0f04ca433430
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: DATE_TYPE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8dd0ed11-9a99-4a00-9883-8a3c89c4d941
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.DATE_TYPE
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 80e34b9d-476b-4ac5-8968-fd208e92f768
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: RECIPIENT_INFORMATION
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e5e51147-380d-4508-b9a3-5ed8bb41203d
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.RECIPIENT_INFORMATION
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: a63e635f-4607-4e6a-b620-1a61048b6c43
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: CLAIM_CROSS_REFERENCE_NUMBER
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 569e2c69-2f7f-4b02-aa1b-80df2a61ddbc
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.CLAIM_CROSS_REFERENCE_NUMBER
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 177d0793-68e4-4458-97f2-a0b4cd48a58a
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: POLICY_NUMBER
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f7c6d59b-59b4-4b55-a05e-88439ac1219b
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.POLICY_NUMBER
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6361a6b0-13f5-46ae-bc63-149ed4e04866
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: DATETIME
+        description: ""
+        name: POLICY_EFFECTIVE_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c01a61c3-2a42-494b-a010-449e7b231eb9
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.POLICY_EFFECTIVE_DATE
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: bdc20579-d6e2-45e3-982c-47a83c18b704
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: DATETIME
+        description: ""
+        name: POLICY_EXPIRATION_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3267fc63-b1d7-463d-ae85-442a00c6114e
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.POLICY_EXPIRATION_DATE
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: bcd76865-c466-419b-b0b8-c33583626e95
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: RECIPIENT_OPTIONAL_INFORMATION
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c5c454e9-eb66-419b-b9f1-a1288c42a275
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.RECIPIENT_OPTIONAL_INFORMATION
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8b0c4415-f538-4033-bbde-1a8508e6f30a
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: CLAIM_STATUS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e82e16a2-6839-44e2-8b64-555e0c657fc6
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.CLAIM_STATUS
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1e9d1e3d-74d1-41ee-a859-42b7c7b270a4
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: CLAIM_STATUS_DESCRIPTION
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 2d3345d8-c845-42a1-a67b-1ec44e735467
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.CLAIM_STATUS_DESCRIPTION
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: a63d1a47-a8b2-4d2d-a2f0-77a3d3c8c7c7
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: DATETIME
+        description: ""
+        name: STATUS_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 191636c2-b9e3-4d40-b6c8-ab8be993b3f2
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.STATUS_DATE
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: a58e576b-4b14-41d3-9f50-3d58a52de1d5
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: DATETIME
+        description: ""
+        name: ACCIDENT_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: bc6210f9-90b5-4b0c-99f6-11f81c96a583
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: TRY_CAST(STG.ACCIDENT_DATE AS DATETIME)
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7c0205d1-165f-4a37-b67e-40cc2479e006
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: ACCIDENT_DAY_OF_WEEK
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 93450e18-124b-4830-a807-657ac7a9d0a6
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.ACCIDENT_DAY_OF_WEEK
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3b1e7f60-91a5-48b5-9f2d-875f532f2759
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: DATETIME
+        description: ""
+        name: CLAIM_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d7572d49-43c2-475a-a329-847e19379201
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.CLAIM_DATE
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0ccf2603-bdc2-4828-ba7d-b108990d1f1c
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: CLAIM
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ebddb877-d4f1-4fd8-98e3-b3c971037599
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.CLAIM
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: a631df6a-129b-4497-a75d-556b62788c03
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: ACCIDENT_TYPE_CODE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e0b5220c-c609-40aa-bc1d-b873d6b04323
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.ACCIDENT_TYPE_CODE
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: a63f7396-e23f-42b7-a3ed-3375b6cd3b4b
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: ACCIDENT_SOURCE_CODE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3a165b6f-7557-4180-a352-875f56b0f913
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.ACCIDENT_SOURCE_CODE
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9c03b127-14e3-4d6b-80a5-298e82ed32ab
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: ACCIDENT_CAUSE_CODE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: df3138b3-19bd-464a-a226-c22646c0590a
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.ACCIDENT_CAUSE_CODE
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: b7043329-3738-4e8c-8c5e-88c99849514b
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: PART_OF_BODY_CODE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d1e7d953-b265-4f36-9b16-e5c9a4130edc
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.PART_OF_BODY_CODE
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: b13c6e1e-f3b1-4f7f-8d9e-c8cd5d5a805f
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: NATURE_OF_LOSS_CODE_PROPERTY_DAMAGE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 2d19f697-7c70-4f51-b0e2-63b782c5f10b
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.NATURE_OF_LOSS_CODE_PROPERTY_DAMAGE
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c1cd21d1-67f7-4340-9a3d-3b749d60927e
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: NATURE_OF_LOSS_CODE_BODILY_INJURY
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6b5c00e6-ec08-410a-b337-67b12d8a43f8
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.NATURE_OF_LOSS_CODE_BODILY_INJURY
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: eb9950d8-55a0-4fc7-b4d4-c9ac2d5f042e
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: RESERVE_TYPE_CODE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8b0c9533-e51f-4ff0-a292-1a6245089304
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.RESERVE_TYPE_CODE
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 934d40ab-444a-4c28-bbcd-cd96c954e3d5
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: METHOD_OF_SETTLEMENT
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a63d414e-065a-4b71-b552-094142f707f5
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.METHOD_OF_SETTLEMENT
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: e827d099-282e-4e4f-b4de-12e039474771
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: CONVERT_CODE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 906231bd-578d-4f7f-8567-27e1f4864c8d
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.CONVERT_CODE
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: b13c1c9b-6e7b-40b9-9a7c-a0e28d8b4e72
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: NCCI_LOSS_COVERAGE_CODE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a7838531-1b05-4f40-8b9a-4f51e2c949be
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.NCCI_LOSS_COVERAGE_CODE
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: a63d1a47-a8b2-4d2d-a2f0-77a3d3c8c7c8
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: DESCRIPTION_OF_LOSS_ENCRYPTED
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e82e185c-15bb-4115-9c59-ac04471cd6c2
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.DESCRIPTION_OF_LOSS
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: e827d099-282e-4e4f-b4de-12e039474772
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: YEAR_LAST_EXPOSED
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 63e00552-32a2-4a0b-80a2-23363072225f
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.YEAR_LAST_EXPOSED
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 934d40ab-444a-4c28-bbcd-cd96c954e3d6
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: ACCIDENT_STATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9c28e833-dd1d-4078-a477-bbcc8b5e9cf1
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.ACCIDENT_STATE
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: b13c1c9b-6e7b-40b9-9a7c-a0e28d8b4e73
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: ACCIDENT_COUNTRY
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ad6a0c0a-6e54-47cd-9e33-72793237e174
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.ACCIDENT_COUNTRY
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c1cd21d1-67f7-4340-9a3d-3b749d60927f
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: BENEFIT_JURISDICTION_STATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ca4fc847-19fd-4f05-aa72-a42e556e431c
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.BENEFIT_JURISDICTION_STATE
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: eb9950d8-55a0-4fc7-b4d4-c9ac2d5f042f
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: BENEFIT_JURISDICTION_COUNTRY
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a6c30386-896c-4861-a0d7-2195f2a1b9d4
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.BENEFIT_JURISDICTION_COUNTRY
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 934d40ab-444a-4c28-bbcd-cd96c954e3d7
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: EXPOSURE_STATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3abcc32e-13c5-4d7a-8d7b-402830f3c5aa
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.EXPOSURE_STATE
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: e827d099-282e-4e4f-b4de-12e039474773
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: EXPOSURE_COUNTRY
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9c016f46-5fde-493e-90f7-526437d2f446
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.EXPOSURE_COUNTRY
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: b13c1c9b-6e7b-40b9-9a7c-a0e28d8b4e74
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: STATE_CLAIM_NUMBER
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5971e411-94eb-4a25-a7b6-c958d515f403
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.STATE_CLAIM_NUMBER
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c1cd21d1-67f7-4340-9a3d-3b749d609280
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: DATETIME
+        description: ""
+        name: EMPLOYER_NOTIFICIATION_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e874a9b7-1c4b-4dfc-b636-edb41c0e3532
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.EMPLOYER_NOTIFICIATION_DATE
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: eb9950d8-55a0-4fc7-b4d4-c9ac2d5f0430
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: DATETIME
+        description: ""
+        name: ORIGINAL_OPEN_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3262d1a3-2c1a-4286-9818-8f85f1c4e793
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.ORIGINAL_OPEN_DATE
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 934d40ab-444a-4c28-bbcd-cd96c954e3d8
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: DATETIME
+        description: ""
+        name: REPORTED_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9789725f-2c32-4740-8197-23dd5f0e9b94
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: TRY_CAST(STG.REPORTED_DATE AS DATETIME)
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: e827d099-282e-4e4f-b4de-12e039474774
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: LEGAL_FIRM_ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 93551e18-d7b1-4b17-a006-2184e5a95b3d
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.LEGAL_FIRM_ID
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: b13c1c9b-6e7b-40b9-9a7c-a0e28d8b4e75
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: INSUIT_FLAG
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f5d779c1-7448-4389-9e8a-8a5ffbf8b6c0
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.IN_SUIT_FLAG
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c1cd21d1-67f7-4340-9a3d-3b749d609281
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: INDEPENDENT_ADJUSTER_ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f7d305de-8785-4429-b695-17180fd1e42f
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.INDEPENDENT_ADJUSTER_ID
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: eb9950d8-55a0-4fc7-b4d4-c9ac2d5f0431
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: VEHICLE_IDENTIFICATION_NUMBER_ENCRYPTED
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3dd5098e-473c-443b-82a9-d6981cf0058e
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.VEHICLE_IDENTIFICATION_NUMBER
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 934d40ab-444a-4c28-bbcd-cd96c954e3d9
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: DRIVER_CHARGEABLE_FLAG
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a63b782b-8a19-4b6c-b3a1-7c961e6c3829
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.DRIVER_CHARGEABLE_FLAG
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: e827d099-282e-4e4f-b4de-12e039474775
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: SURGERY_FLAG
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c035b446-0b1a-48a0-bb6f-998846c483a9
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.SURGERY_FLAG
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: b13c1c9b-6e7b-40b9-9a7c-a0e28d8b4e76
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: CLAIM_ADJUSTING_BRANCH_NUMBER
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 2d1ab5a7-96a1-4389-9430-c3d5964f780e
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.CLAIM_ADJUSTING_BRANCH_NUMBER
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c1cd21d1-67f7-4340-9a3d-3b749d609282
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: EMPLOYER_PREMISES_FLAG
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e8051784-7a91-49b8-b80c-03d526e3c032
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.EMPLOYER_PREMISES_FLAG
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: eb9950d8-55a0-4fc7-b4d4-c9ac2d5f0432
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: ADJUSTER_NUMBER
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: bc658399-69e1-4c11-9a74-d02f5e714101
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.ADJUSTER_NUMBER
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 934d40ab-444a-4c28-bbcd-cd96c954e3da
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: REVIEWER_NUMBER
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: caa141b7-b088-4660-844c-cd2f993d56d7
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.REVIEWER_NUMBER
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: e827d099-282e-4e4f-b4de-12e039474776
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: ADJUSTER_REVIEW_FREQUENCY
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3a9a14de-c8e1-4876-b6d3-2f2759e992cc
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.ADJUSTER_REVIEW_FREQUENCY
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: b13c1c9b-6e7b-40b9-9a7c-a0e28d8b4e77
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: REVIEWER_REVIEW_FREQUENCY
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 60a4f5f9-a864-4e4b-8e1f-49ff411a0c4f
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.REVIEWER_REVIEW_FREQUENCY
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c1cd21d1-67f7-4340-9a3d-3b749d609283
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: NUMBER_OF_DEPENDENTS_FLAG
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 091f09e6-f831-419b-b5e5-3914a275464f
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.NUMBER_OF_DEPENDENTS_FLAG
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: eb9950d8-55a0-4fc7-b4d4-c9ac2d5f0433
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: ORIGINAL_DAMAGE_ESTIMATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 935cdccf-f851-40ef-871d-f8f4a0b36873
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.ORIGINAL_DAMAGE_ESTIMATE
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 934d40ab-444a-4c28-bbcd-cd96c954e3db
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: BILLING_CODE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a6312a0d-2b45-4200-a178-57d6928e4695
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.BILLING_CODE
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: e827d099-282e-4e4f-b4de-12e039474777
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: CLAIMANT_NAME_FORMAT
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 569d4bd4-6f01-4470-a36c-9a41bd26251b
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.CLAIMANT_NAME_FORMAT
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: b13c1c9b-6e7b-40b9-9a7c-a0e28d8b4e78
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: CLAIMANT_LASTNAME_ENCRYPTED
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5543329f-331c-4389-9cf9-7815d2a93145
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.CLAIMANT_LASTNAME
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c1cd21d1-67f7-4340-9a3d-3b749d609284
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: CLAIMANT_FIRSTNAME
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8d1f054b-d7d4-48ac-a33d-c78204652431
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.CLAIMANT_FIRSTNAME
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: eb9950d8-55a0-4fc7-b4d4-c9ac2d5f0434
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: CLAIMANT_ORGANIZATION_NAME_ENCRYPTED
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 1f0e498c-8c0c-4027-aa4e-c55a5fd56b23
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.CLAIMANT_ORGANIZATION_NAME
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 934d40ab-444a-4c28-bbcd-cd96c954e3dc
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: CLAIMANT_ADDRESS_ENCRYPTED
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 1789c622-c3f2-4416-b185-3b1a8d38ca8a
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.CLAIMANT_ADDRESS
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: e827d099-282e-4e4f-b4de-12e039474778
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: CLAIMANT_CITY
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 95537651-de05-4f46-86c5-e55541c48fca
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.CLAIMANT_CITY
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: b13c1c9b-6e7b-40b9-9a7c-a0e28d8b4e79
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: CLAIMANT_STATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a63e635f-4607-4e6a-b620-1a61048b6c43
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.CLAIMANT_STATE
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c1cd21d1-67f7-4340-9a3d-3b749d609285
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: CLAIMANT_COUNTRY
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 177d0793-68e4-4458-97f2-a0b4cd48a58a
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.CLAIMANT_COUNTRY
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: eb9950d8-55a0-4fc7-b4d4-c9ac2d5f0435
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: CLAIMANT_ZIPCODE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6361a6b0-13f5-46ae-bc63-149ed4e04866
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.CLAIMANT_ZIPCODE
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 934d40ab-444a-4c28-bbcd-cd96c954e3dd
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: CLAIMANT_AGE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: bdc20579-d6e2-45e3-982c-47a83c18b704
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.CLAIMANT_AGE
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: e827d099-282e-4e4f-b4de-12e039474779
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: CLAIMANT_SEX
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: bcd76865-c466-419b-b0b8-c33583626e95
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.CLAIMANT_SEX
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: b13c1c9b-6e7b-40b9-9a7c-a0e28d8b4e80
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: CLAIMANT_SOCIALSECURITYNUMBER_ENCRYPTED
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8b0c4415-f538-4033-bbde-1a8508e6f30a
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.CLAIMANT_SOCIALSECURITYNUMBER
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c1cd21d1-67f7-4340-9a3d-3b749d609286
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: CLAIMANT_AVERAGE_WEEKLY_WAGE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 1e9d1e3d-74d1-41ee-a859-42b7c7b270a4
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.CLAIMANT_AVERAGE_WEEKLY_WAGE
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: eb9950d8-55a0-4fc7-b4d4-c9ac2d5f0436
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: CLAIMANT_NCCI_JOB_CLASSIFICATION
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a63d1a47-a8b2-4d2d-a2f0-77a3d3c8c7c7
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.CLAIMANT_NCCI_JOB_CLASSIFICATION
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 934d40ab-444a-4c28-bbcd-cd96c954e3de
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: CLAIMANT_LENGTH_OF_SERVICE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a58e576b-4b14-41d3-9f50-3d58a52de1d5
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.CLAIMANT_LENGTH_OF_SERVICE
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: e827d099-282e-4e4f-b4de-12e039474780
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: CONTROVERTED_CASE_FLAG
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 7c0205d1-165f-4a37-b67e-40cc2479e006
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.CONTROVERTED_CASE_FLAG
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: b13c1c9b-6e7b-40b9-9a7c-a0e28d8b4e81
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: DATETIME
+        description: ""
+        name: HIRE_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3b1e7f60-91a5-48b5-9f2d-875f532f2759
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.HIRE_DATE
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c1cd21d1-67f7-4340-9a3d-3b749d609287
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: EMPLOYMENT_STATUS_FLAG
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 0ccf2603-bdc2-4828-ba7d-b108990d1f1c
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.EMPLOYMENT_STATUS_FLAG
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: eb9950d8-55a0-4fc7-b4d4-c9ac2d5f0437
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: DATETIME
+        description: ""
+        name: BIRTH_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a631df6a-129b-4497-a75d-556b62788c03
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.BIRTH_DATE
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 934d40ab-444a-4c28-bbcd-cd96c954e3df
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: DEATH_DATE_ENCRYPTED
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a63f7396-e23f-42b7-a3ed-3375b6cd3b4b
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.DEATH_DATE
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: e827d099-282e-4e4f-b4de-12e039474781
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: MARITAL_STATUS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9c03b127-14e3-4d6b-80a5-298e82ed32ab
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.MARITAL_STATUS
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: b13c1c9b-6e7b-40b9-9a7c-a0e28d8b4e82
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: NUMBER_OF_DEPENDENTS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b7043329-3738-4e8c-8c5e-88c99849514b
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.NUMBER_OF_DEPENDENTS
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c1cd21d1-67f7-4340-9a3d-3b749d609288
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: EMPLOYEE_IDENTIFICATION_NUMBER_ENCRYPTED
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b13c6e1e-f3b1-4f7f-8d9e-c8cd5d5a805f
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.EMPLOYEE_IDENTIFICATION_NUMBER
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: eb9950d8-55a0-4fc7-b4d4-c9ac2d5f0438
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: EMPLOYEE_DEPARTMENT
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c1cd21d1-67f7-4340-9a3d-3b749d60927e
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.EMPLOYEE_DEPARTMENT
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 934d40ab-444a-4c28-bbcd-cd96c954e3e0
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: EMPLOYEE_OCCUPATION
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: eb9950d8-55a0-4fc7-b4d4-c9ac2d5f042e
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.EMPLOYEE_OCCUPATION
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: e827d099-282e-4e4f-b4de-12e039474782
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: COMPENSATION_RATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 934d40ab-444a-4c28-bbcd-cd96c954e3d5
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.COMPENSATION_RATE
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: b13c1c9b-6e7b-40b9-9a7c-a0e28d8b4e83
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: NCCI_INJURY_CODE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e827d099-282e-4e4f-b4de-12e039474771
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.NCCI_INJURY_CODE
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c1cd21d1-67f7-4340-9a3d-3b749d609289
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: CLAIMANT_PHONE_NUMBER_ENCRYPTED
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b13c1c9b-6e7b-40b9-9a7c-a0e28d8b4e72
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.CLAIMANT_PHONE_NUMBER
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: eb9950d8-55a0-4fc7-b4d4-c9ac2d5f0439
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: DATETIME
+        description: ""
+        name: DISABILITY_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a63d1a47-a8b2-4d2d-a2f0-77a3d3c8c7c8
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.DISABILITY_DATE
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 934d40ab-444a-4c28-bbcd-cd96c954e3e1
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: DATETIME
+        description: ""
+        name: RETURN_TO_WORK_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e827d099-282e-4e4f-b4de-12e039474772
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.RETURN_TO_WORK_DATE
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: e827d099-282e-4e4f-b4de-12e039474783
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: DATETIME
+        description: ""
+        name: MAX_MEDICAL_IMPROVEMENT_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 934d40ab-444a-4c28-bbcd-cd96c954e3d6
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.MAX_MEDICAL_IMPROVEMENT_DATE
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: b13c1c9b-6e7b-40b9-9a7c-a0e28d8b4e84
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: ATTORNEY_AUTHORIZED_REPRESENTATIVE_FLAG
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b13c1c9b-6e7b-40b9-9a7c-a0e28d8b4e73
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.ATTORNEY_AUTHORIZED_REPRESENTATIVE_FLAG
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c1cd21d1-67f7-4340-9a3d-3b749d609290
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: POST_INJURY_WEEKLY_WAGE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c1cd21d1-67f7-4340-9a3d-3b749d60927f
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.POST_INJURY_WEEKLY_WAGE
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: eb9950d8-55a0-4fc7-b4d4-c9ac2d5f0440
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: PERCENTAGE_OF_IMPAIRMENT
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: eb9950d8-55a0-4fc7-b4d4-c9ac2d5f042f
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.PERCENTAGE_OF_IMPAIRMENT
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 934d40ab-444a-4c28-bbcd-cd96c954e3e2
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: ACCIDENT_CITY_CODE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 934d40ab-444a-4c28-bbcd-cd96c954e3d7
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.ACCIDENT_CITY_CODE
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: e827d099-282e-4e4f-b4de-12e039474784
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: FULL_STATE_CLAIM_NUMBER
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e827d099-282e-4e4f-b4de-12e039474773
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.FULL_STATE_CLAIM_NUMBER
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: b13c1c9b-6e7b-40b9-9a7c-a0e28d8b4e85
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: INSURER_NAME
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b13c1c9b-6e7b-40b9-9a7c-a0e28d8b4e74
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.INSURER_NAME
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c1cd21d1-67f7-4340-9a3d-3b749d609291
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: REDUCED_AMOUNT_BENEFIT_CODE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c1cd21d1-67f7-4340-9a3d-3b749d609280
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.REDUCED_AMOUNT_BENEFIT_CODE
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: eb9950d8-55a0-4fc7-b4d4-c9ac2d5f0441
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: EMPLOYEES_OCCUPATION_50BYTES
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: eb9950d8-55a0-4fc7-b4d4-c9ac2d5f0430
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.EMPLOYEES_OCCUPATION_50_BYTES
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 934d40ab-444a-4c28-bbcd-cd96c954e3e3
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: WORKERS_COMPENSATION_CLAIMTYPE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 934d40ab-444a-4c28-bbcd-cd96c954e3d8
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.WORKERS_COMPENSATION_CLAIM_TYPE
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: e827d099-282e-4e4f-b4de-12e039474785
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: OTHER_WEEKLY_PAYMENTS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e827d099-282e-4e4f-b4de-12e039474774
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.OTHER_WEEKLY_PAYMENTS
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: b13c1c9b-6e7b-40b9-9a7c-a0e28d8b4e86
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: ACCIDENT_ZIPCODE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b13c1c9b-6e7b-40b9-9a7c-a0e28d8b4e75
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.ACCIDENT_ZIP_CODE
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c1cd21d1-67f7-4340-9a3d-3b749d609292
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: DATETIME
+        description: ""
+        name: ATTORNEY_DISCLOSURE_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c1cd21d1-67f7-4340-9a3d-3b749d609281
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.ATTORNEY_DISCLOSURE_DATE
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: eb9950d8-55a0-4fc7-b4d4-c9ac2d5f0442
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: SALVAGE_RECOVERY_POTENTIAL
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: eb9950d8-55a0-4fc7-b4d4-c9ac2d5f0431
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.SALVAGE_RECOVERY_POTENTIAL
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 934d40ab-444a-4c28-bbcd-cd96c954e3e4
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: SUBROGATION_RECOVERY_POTENTIAL
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 934d40ab-444a-4c28-bbcd-cd96c954e3d9
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.SUBROGATION_RECOVERY_POTENTIAL
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: e827d099-282e-4e4f-b4de-12e039474786
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: STATE_FUND_RECOVERY_POTENTIAL
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e827d099-282e-4e4f-b4de-12e039474775
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.STATE_FUND_RECOVERY_POTENTIAL
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: b13c1c9b-6e7b-40b9-9a7c-a0e28d8b4e87
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: OTHER_RECOVERY_POTENTIAL
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b13c1c9b-6e7b-40b9-9a7c-a0e28d8b4e76
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.OTHER_RECOVERY_POTENTIAL
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c1cd21d1-67f7-4340-9a3d-3b749d609293
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: DATETIME
+        description: ""
+        name: REPORT_BASIS_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c1cd21d1-67f7-4340-9a3d-3b749d609282
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: TRY_CAST(STG.REPORT_BASIS_DATE AS DATETIME)
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: eb9950d8-55a0-4fc7-b4d4-c9ac2d5f0443
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: REPORTING_BASIS_CODE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: eb9950d8-55a0-4fc7-b4d4-c9ac2d5f0432
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.REPORTING_BASIS_CODE
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 934d40ab-444a-4c28-bbcd-cd96c954e3e5
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: DATETIME
+        description: ""
+        name: OCCURRENCE_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 934d40ab-444a-4c28-bbcd-cd96c954e3da
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.OCCURRENCE_DATE
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: e827d099-282e-4e4f-b4de-12e039474787
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: CLIENT_NUMBER_MC
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e827d099-282e-4e4f-b4de-12e039474776
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.CLIENT_NUMBER_MC
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: b13c1c9b-6e7b-40b9-9a7c-a0e28d8b4e88
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: MULTI_CLAIM_OCCUR_FLAG
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b13c1c9b-6e7b-40b9-9a7c-a0e28d8b4e77
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.MULTI_CLAIM_OCCUR_FLAG
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c1cd21d1-67f7-4340-9a3d-3b749d609294
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: MULTI_CLAIM_OCCUR_CODE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c1cd21d1-67f7-4340-9a3d-3b749d609283
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.MULTI_CLAIM_OCCUR_CODE
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: eb9950d8-55a0-4fc7-b4d4-c9ac2d5f0444
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: ACCIDENT_NUMBER_MC
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: eb9950d8-55a0-4fc7-b4d4-c9ac2d5f0433
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.ACCIDENT_NUMBER_MC
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 934d40ab-444a-4c28-bbcd-cd96c954e3e6
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: DEATH_RESULT_CODE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 934d40ab-444a-4c28-bbcd-cd96c954e3db
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.DEATH_RESULT_CODE
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: e827d099-282e-4e4f-b4de-12e039474788
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: NCCI_METHOD_OF_SETTLEMENT_CODE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e827d099-282e-4e4f-b4de-12e039474777
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.NCCI_METHOD_OF_SETTLEMENT_CODE
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: b13c1c9b-6e7b-40b9-9a7c-a0e28d8b4e89
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: SOCIAL_SECURITY_OFFSET_FLAG
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b13c1c9b-6e7b-40b9-9a7c-a0e28d8b4e78
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.SOCIAL_SECURITY_OFFSET_FLAG
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c1cd21d1-67f7-4340-9a3d-3b749d609295
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: UNEMPLOYMENT_OFFSET_FLAG
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c1cd21d1-67f7-4340-9a3d-3b749d609284
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.UNEMPLOYMENT_OFFSET_FLAG
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: eb9950d8-55a0-4fc7-b4d4-c9ac2d5f0445
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: PENSION_OFFSET_FLAG
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: eb9950d8-55a0-4fc7-b4d4-c9ac2d5f0434
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.PENSION_OFFSET_FLAG
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 934d40ab-444a-4c28-bbcd-cd96c954e3e7
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: OTHER_OFFSET_FLAG
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 934d40ab-444a-4c28-bbcd-cd96c954e3dc
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.OTHER_OFFSET_FLAG
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: e827d099-282e-4e4f-b4de-12e039474789
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: DEDUCTIBLE_FLAG
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e827d099-282e-4e4f-b4de-12e039474778
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.DEDUCTIBLE_FLAG
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: b13c1c9b-6e7b-40b9-9a7c-a0e28d8b4e90
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: LOSS_PROGRAM_LAYER_IDENTIFICATION
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b13c1c9b-6e7b-40b9-9a7c-a0e28d8b4e79
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.LOSS_PROGRAM_LAYER_IDENTIFICATION
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c1cd21d1-67f7-4340-9a3d-3b749d609296
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: LOSS_PROGRAM_NUMBER
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c1cd21d1-67f7-4340-9a3d-3b749d609285
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.LOSS_PROGRAM_NUMBER
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: eb9950d8-55a0-4fc7-b4d4-c9ac2d5f0446
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: CLAIM_PERIOD_NUMBER
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: eb9950d8-55a0-4fc7-b4d4-c9ac2d5f0435
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.CLAIM_PERIOD_NUMBER
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 934d40ab-444a-4c28-bbcd-cd96c954e3e8
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: EMPLOYEE_NUMBER
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 934d40ab-444a-4c28-bbcd-cd96c954e3dd
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.EMPLOYEE_NUMBER
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: e827d099-282e-4e4f-b4de-12e039474790
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: DATETIME
+        description: ""
+        name: DENIAL_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e827d099-282e-4e4f-b4de-12e039474779
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.DENIAL_DATE
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: b13c1c9b-6e7b-40b9-9a7c-a0e28d8b4e91
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: EMPLOYER_FEDERAL_TAX_IDENTIFICATION_NUMBER_ENCRYPTED
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b13c1c9b-6e7b-40b9-9a7c-a0e28d8b4e80
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.EMPLOYER_FEDERAL_TAX_IDENTIFICATION_NUMBER
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c1cd21d1-67f7-4340-9a3d-3b749d609297
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: WEEKLY_BENEFIT
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c1cd21d1-67f7-4340-9a3d-3b749d609286
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.WEEKLY_BENEFIT
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: eb9950d8-55a0-4fc7-b4d4-c9ac2d5f0447
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: PRODUCT_NAME
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: eb9950d8-55a0-4fc7-b4d4-c9ac2d5f0436
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.PRODUCT_NAME
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 934d40ab-444a-4c28-bbcd-cd96c954e3e9
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: NCCI_TYPE_OF_LOSS_FLAG
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 934d40ab-444a-4c28-bbcd-cd96c954e3de
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.NCCI_TYPE_OF_LOSS_FLAG
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: e827d099-282e-4e4f-b4de-12e039474791
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: NCCI_PPO_FLAG
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e827d099-282e-4e4f-b4de-12e039474780
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.NCCI_PPO_FLAG
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: b13c1c9b-6e7b-40b9-9a7c-a0e28d8b4e92
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: FRAUD_INDICATOR
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b13c1c9b-6e7b-40b9-9a7c-a0e28d8b4e81
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.FRAUD_INDICATOR
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c1cd21d1-67f7-4340-9a3d-3b749d609298
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: NCCI_ACT
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c1cd21d1-67f7-4340-9a3d-3b749d609287
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.NCCI_ACT
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: eb9950d8-55a0-4fc7-b4d4-c9ac2d5f0448
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: SOCIALSECURITY_OR_OTHER_OFFSET_AMOUNT
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: eb9950d8-55a0-4fc7-b4d4-c9ac2d5f0437
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.SOCIALSECURITY_OR_OTHER_OFFSET_AMOUNT
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 934d40ab-444a-4c28-bbcd-cd96c954e3ea
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: TOTAL_LOST_WORK_DAYS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 934d40ab-444a-4c28-bbcd-cd96c954e3df
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.TOTAL_LOST_WORK_DAYS
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: e827d099-282e-4e4f-b4de-12e039474792
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: SIC_CODE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e827d099-282e-4e4f-b4de-12e039474781
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.SIC_CODE
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: b13c1c9b-6e7b-40b9-9a7c-a0e28d8b4e93
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: DEGREE_OF_LOSSFLAG
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b13c1c9b-6e7b-40b9-9a7c-a0e28d8b4e82
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.DEGREE_OF_LOSS_FLAG
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c1cd21d1-67f7-4340-9a3d-3b749d609299
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: APPRAISED_ELIGIBILITY_FLAG
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c1cd21d1-67f7-4340-9a3d-3b749d609288
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.APPRAISED_ELIGIBILITY_FLAG
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: eb9950d8-55a0-4fc7-b4d4-c9ac2d5f0449
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: CLIENT_OPTIONAL_CLAIM_CODES
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: eb9950d8-55a0-4fc7-b4d4-c9ac2d5f0438
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.CLIENT_OPTIONAL_CLAIM_CODES
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 934d40ab-444a-4c28-bbcd-cd96c954e3eb
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: CATASTROPHE_CODE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 934d40ab-444a-4c28-bbcd-cd96c954e3e0
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.CATASTROPHE_CODE
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: e827d099-282e-4e4f-b4de-12e039474793
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: CLIENT_OPTIONAL_ACCIDENT_CODES
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e827d099-282e-4e4f-b4de-12e039474782
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.CLIENT_OPTIONAL_ACCIDENT_CODES
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: b13c1c9b-6e7b-40b9-9a7c-a0e28d8b4e94
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: DRIVER_NAME_FORMAT
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b13c1c9b-6e7b-40b9-9a7c-a0e28d8b4e83
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.DRIVER_NAME_FORMAT
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c1cd21d1-67f7-4340-9a3d-3b749d609300
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: DRIVER_LASTNAME_ENCRYPTED
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c1cd21d1-67f7-4340-9a3d-3b749d609289
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.DRIVER_LASTNAME
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: eb9950d8-55a0-4fc7-b4d4-c9ac2d5f0450
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: DRIVER_FIRSTNAME
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: eb9950d8-55a0-4fc7-b4d4-c9ac2d5f0439
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.DRIVER_FIRSTNAME
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 934d40ab-444a-4c28-bbcd-cd96c954e3ec
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: DRIVER_ORGANIZATION_NAME
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 934d40ab-444a-4c28-bbcd-cd96c954e3e1
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.DRIVER_ORGANIZATION_NAME
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: e827d099-282e-4e4f-b4de-12e039474794
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: DRIVER_AGE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e827d099-282e-4e4f-b4de-12e039474783
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.DRIVER_AGE
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: b13c1c9b-6e7b-40b9-9a7c-a0e28d8b4e95
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: DRIVER_SEX
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b13c1c9b-6e7b-40b9-9a7c-a0e28d8b4e84
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.DRIVER_SEX
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c1cd21d1-67f7-4340-9a3d-3b749d609301
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: DRIVER_SOCIALSECURITY_NUMBER_ENCRYPTED
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c1cd21d1-67f7-4340-9a3d-3b749d609290
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.DRIVER_SOCIALSECURITYNUMBER
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: eb9950d8-55a0-4fc7-b4d4-c9ac2d5f0451
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: REPORTING_UNIT_NUMBER
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: eb9950d8-55a0-4fc7-b4d4-c9ac2d5f0440
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.REPORTING_UNITNUMBER
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 934d40ab-444a-4c28-bbcd-cd96c954e3ed
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: REPORTING_UNIT_NAME_FORMAT
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 934d40ab-444a-4c28-bbcd-cd96c954e3e2
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.REPORTING_UNITNAMEFORMAT
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: e827d099-282e-4e4f-b4de-12e039474795
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: REPORTING_UNIT_LASTNAME_ENCRYPTED
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e827d099-282e-4e4f-b4de-12e039474784
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.REPORTING_UNITLASTNAME
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: b13c1c9b-6e7b-40b9-9a7c-a0e28d8b4e96
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: REPORTING_UNIT_FIRSTNAME
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b13c1c9b-6e7b-40b9-9a7c-a0e28d8b4e85
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.REPORTING_UNITFIRSTNAME
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c1cd21d1-67f7-4340-9a3d-3b749d609302
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: REPORTING_UNIT_ORGANIZATION_NAME
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c1cd21d1-67f7-4340-9a3d-3b749d609291
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.REPORTING_UNITORGANIZATION_NAME
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: eb9950d8-55a0-4fc7-b4d4-c9ac2d5f0452
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: REPORTING_UNIT_ADDRESS_ENCRYPTED
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: eb9950d8-55a0-4fc7-b4d4-c9ac2d5f0441
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.REPORTING_UNIT_ADDRESS
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 934d40ab-444a-4c28-bbcd-cd96c954e3ee
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: REPORTING_UNIT_CITY
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 934d40ab-444a-4c28-bbcd-cd96c954e3e3
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.REPORTING_UNIT_CITY
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: e827d099-282e-4e4f-b4de-12e039474796
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: REPORTING_UNIT_STATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e827d099-282e-4e4f-b4de-12e039474785
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.REPORTING_UNIT_STATE
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: b13c1c9b-6e7b-40b9-9a7c-a0e28d8b4e97
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: REPORTING_UNIT_COUNTRY
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b13c1c9b-6e7b-40b9-9a7c-a0e28d8b4e86
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.REPORTING_UNIT_COUNTRY
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c1cd21d1-67f7-4340-9a3d-3b749d609303
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: REPORTING_UNIT_ZIPCODE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c1cd21d1-67f7-4340-9a3d-3b749d609292
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.REPORTING_UNIT_ZIPCODE
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: eb9950d8-55a0-4fc7-b4d4-c9ac2d5f0453
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: INSURED_VEHICLE_YEAR
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: eb9950d8-55a0-4fc7-b4d4-c9ac2d5f0442
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.INSURED_VEHICLE_YEAR
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 934d40ab-444a-4c28-bbcd-cd96c954e3ef
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: INSURED_VEHICLE_MAKE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 934d40ab-444a-4c28-bbcd-cd96c954e3e4
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.INSURED_VEHICLE_MAKE
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: e827d099-282e-4e4f-b4de-12e039474797
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: LOSS_PAYEE_NAME_FORMAT
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e827d099-282e-4e4f-b4de-12e039474786
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.LOSS_PAYEE_NAME_FORMAT
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: b13c1c9b-6e7b-40b9-9a7c-a0e28d8b4e98
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: LOSS_PAYEE_LASTNAME_ENCRYPTED
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b13c1c9b-6e7b-40b9-9a7c-a0e28d8b4e87
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.LOSS_PAYEE_LASTNAME
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c1cd21d1-67f7-4340-9a3d-3b749d609304
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: LOSS_PAYEE_FIRSTNAME
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c1cd21d1-67f7-4340-9a3d-3b749d609293
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.LOSS_PAYEE_FIRSTNAME
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: eb9950d8-55a0-4fc7-b4d4-c9ac2d5f0454
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: LOSS_PAYEE_ORGANIZATION_NAME
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: eb9950d8-55a0-4fc7-b4d4-c9ac2d5f0443
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.LOSS_PAYEE_ORGANIZATION_NAME
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 934d40ab-444a-4c28-bbcd-cd96c954e3f0
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: LOSS_LOCATION_STREET_ADDRESS_ENCRYPTED
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 934d40ab-444a-4c28-bbcd-cd96c954e3e5
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.LOSS_LOCATION_STREET_ADDRESS
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: e827d099-282e-4e4f-b4de-12e039474798
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: LOSS_LOCATION_CITY
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e827d099-282e-4e4f-b4de-12e039474787
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.LOSS_LOCATION_CITY
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: b13c1c9b-6e7b-40b9-9a7c-a0e28d8b4e99
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: BENEFICIARY_INFORMATION
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b13c1c9b-6e7b-40b9-9a7c-a0e28d8b4e88
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.BENEFICIARY_INFORMATION
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c1cd21d1-67f7-4340-9a3d-3b749d609305
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: COMPANION_ACCIDENT_NUMBER
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c1cd21d1-67f7-4340-9a3d-3b749d609294
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.COMPANION_ACCIDENT_NUMBER
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: eb9950d8-55a0-4fc7-b4d4-c9ac2d5f0455
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: COMPANION_COVERAGE_CODE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: eb9950d8-55a0-4fc7-b4d4-c9ac2d5f0444
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.COMPANION_COVERAGE_CODE
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 934d40ab-444a-4c28-bbcd-cd96c954e3f1
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: COMPANION_COVERAGE_SEQUENCE_NUMBER
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 934d40ab-444a-4c28-bbcd-cd96c954e3e6
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.COMPANION_COVERAGE_SEQUENCE_NUMBER
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: e827d099-282e-4e4f-b4de-12e039474799
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: DATETIME
+        description: ""
+        name: DATE_LAST_WORKED
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e827d099-282e-4e4f-b4de-12e039474788
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.DATE_LAST_WORKED
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: b13c1c9b-6e7b-40b9-9a7c-a0e28d8b4e9a
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: FULL_PAY_DAY_OF_INJURY_FLAG
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b13c1c9b-6e7b-40b9-9a7c-a0e28d8b4e89
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.FULL_PAYDAY_OF_INJURY_FLAG
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c1cd21d1-67f7-4340-9a3d-3b749d609306
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: DATETIME
+        description: ""
+        name: RETURN_TO_WORK_RELEASE_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c1cd21d1-67f7-4340-9a3d-3b749d609295
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.RETURN_TO_WORK_RELEASE_DATE
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: eb9950d8-55a0-4fc7-b4d4-c9ac2d5f0456
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: RETURN_TO_WORK_RESTRICTED_FLAG
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: eb9950d8-55a0-4fc7-b4d4-c9ac2d5f0445
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.RETURN_TO_WORK_RESTRICTED_FLAG
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 934d40ab-444a-4c28-bbcd-cd96c954e3f2
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: SALARY_CONTINUED_FLAG
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 934d40ab-444a-4c28-bbcd-cd96c954e3e7
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.SALARY_CONTINUED_FLAG
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: e827d099-282e-4e4f-b4de-12e03947479a
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: CLAIM_EVER_CONTROVERTED_FLAG
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e827d099-282e-4e4f-b4de-12e039474789
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.CLAIM_EVER_CONTROVERTED_FLAG
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: b13c1c9b-6e7b-40b9-9a7c-a0e28d8b4e9b
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: LOST_TIME_CASE_FLAG
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b13c1c9b-6e7b-40b9-9a7c-a0e28d8b4e90
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.LOST_TIME_CASE_FLAG
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c1cd21d1-67f7-4340-9a3d-3b749d609307
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: DATETIME
+        description: ""
+        name: REPRESENTATION_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c1cd21d1-67f7-4340-9a3d-3b749d609296
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.REPRESENTATION_DATE
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: eb9950d8-55a0-4fc7-b4d4-c9ac2d5f0457
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: DATETIME
+        description: ""
+        name: SALARY_CONTINUED_START_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: eb9950d8-55a0-4fc7-b4d4-c9ac2d5f0446
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.SALARY_CONTINUED_START_DATE
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 934d40ab-444a-4c28-bbcd-cd96c954e3f3
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: DATETIME
+        description: ""
+        name: SALARY_CONTINUED_END_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 934d40ab-444a-4c28-bbcd-cd96c954e3e8
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.SALARY_CONTINUED_END_DATE
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: e827d099-282e-4e4f-b4de-12e03947479b
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: DATETIME
+        description: ""
+        name: RETURN_TO_WORK_FULL_DUTY_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e827d099-282e-4e4f-b4de-12e039474790
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.RETURN_TO_WORK_FULL_DUTY_DATE
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: b13c1c9b-6e7b-40b9-9a7c-a0e28d8b4e9c
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: LOSS_CLIENT_NUMBER
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b13c1c9b-6e7b-40b9-9a7c-a0e28d8b4e91
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.LOSS_CLIENT_NUMBER
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c1cd21d1-67f7-4340-9a3d-3b749d609308
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: LOSS_REFERENCE_NUMBER
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c1cd21d1-67f7-4340-9a3d-3b749d609297
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.LOSS_REFERENCE_NUMBER
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: eb9950d8-55a0-4fc7-b4d4-c9ac2d5f0458
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: LOSS_TRADING_PARTERNER_CODE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: eb9950d8-55a0-4fc7-b4d4-c9ac2d5f0447
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.LOSS_TRADING_PARTERNER_CODE
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 934d40ab-444a-4c28-bbcd-cd96c954e3f4
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: LOSS_TRADING_PARTERNER_CODE_TYPE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 934d40ab-444a-4c28-bbcd-cd96c954e3e9
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.LOSS_TRADING_PARTERNER_CODE_TYPE
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: e827d099-282e-4e4f-b4de-12e03947479c
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: LOSS_CLAIMANT_SEQUENCE_NUMBER
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e827d099-282e-4e4f-b4de-12e039474791
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.LOSS_CLAIMANT_SEQUENCE_NUMBER
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: b13c1c9b-6e7b-40b9-9a7c-a0e28d8b4e9d
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: DATETIME
+        description: ""
+        name: MEDICAL_TO_INDEMNITY_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b13c1c9b-6e7b-40b9-9a7c-a0e28d8b4e92
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.MEDICAL_TO_INDEMNITY_DATE
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c1cd21d1-67f7-4340-9a3d-3b749d609309
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: POLICY_NUMBER30
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c1cd21d1-67f7-4340-9a3d-3b749d609298
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: STG.POLICY_NUMBER30
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: eb9950d8-55a0-4fc7-b4d4-c9ac2d5f0459
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: DATE
+        description: ""
+        name: LAST_REVIEW_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: eb9950d8-55a0-4fc7-b4d4-c9ac2d5f0448
+                stepCounter: 58872b7d-60a6-4076-9c4c-4734891b6cfc
+            transform: TRY_CAST(STG.LAST_REVIEW_DATE AS DATE)
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0f2b6e51-4e7a-4416-8c43-41c39c890f5d
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: TIMESTAMP_NTZ
+        description: ""
+        name: ACA_DATE_CREATED
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: CURRENT_TIMESTAMP()
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: a2d6110f-618d-4f24-9b2e-0a1a0f5a7d6e
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: ACA_CREATE_USER
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: '''spaca_aca_transaction_claim_insert'''
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8b277d33-4f9e-4f7f-8e43-1e5f5f4b5e2d
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: TIMESTAMP_NTZ
+        description: ""
+        name: ACA_DATE_UPDATED
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: CURRENT_TIMESTAMP()
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1a9f0f5a-7d6e-4e5f-b4a1-8c4341c39c89
+          stepCounter: 566e9499-c831-4191-881b-513fd3f4fc44
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: ACA_UPDATE_USER
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: '''spaca_aca_transaction_claim_insert'''
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          ACA_TRANSACTION_CLAIM_STAGING: STG
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: DBSHIFT
+            nodeName: ACA_TRANSACTION_CLAIM_STAGING
+        join:
+          joinCondition: FROM {{ ref('DBSHIFT', 'ACA_TRANSACTION_CLAIM_STAGING') }} "STG"
+        name: ACA_TRANSACTION_CLAIM
+        noLinkRefs: []
+  name: ACA_TRANSACTION_CLAIM
+  overrideSQL: false
+  schema: DBO
+  sqlType: Stage
+  type: sql
+  version: 1
+type: Node
