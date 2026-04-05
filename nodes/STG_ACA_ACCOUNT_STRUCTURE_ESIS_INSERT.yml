@@ -1,0 +1,251 @@
+fileVersion: 1
+id: 5938f29d-4c3e-4621-995f-97d81a8685e1
+name: STG_ACA_ACCOUNT_STRUCTURE_ESIS_INSERT
+operation:
+  config:
+    insertStrategy: INSERT
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: true
+    truncateBefore: true
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: DBSHIFT
+  materializationType: view
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0f3c5f47-b371-460d-8541-d8a4f944d156
+          stepCounter: 5938f29d-4c3e-4621-995f-97d81a8685e1
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: SOURCE_SYSTEM_ACCOUNT_STRUCTURE_ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 326284f2-9572-4d22-b5e1-897914f7b600
+                stepCounter: 57d898ba-38b8-472e-8367-27b2b622e37e
+            transform: STG.SOURCE_SYSTEM_ACCOUNT_STRUCTURE_ID
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3c577033-d860-498c-8438-d698f09b2e04
+          stepCounter: 5938f29d-4c3e-4621-995f-97d81a8685e1
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: CLIENT_NUMBER
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 1361920e-c906-4b2a-a95e-14660d2b7e9b
+                stepCounter: 57d898ba-38b8-472e-8367-27b2b622e37e
+            transform: STG.CLIENT_NUMBER
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 47b1cd2d-5ed5-430c-ab22-38ed9d20c3a6
+          stepCounter: 5938f29d-4c3e-4621-995f-97d81a8685e1
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: UNIT_ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c822e118-2d83-4a00-880c-99c53fd96392
+                stepCounter: 57d898ba-38b8-472e-8367-27b2b622e37e
+            transform: STG.UNIT_ID
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: f723467c-d6ac-4e94-845b-38ab3b378ab1
+          stepCounter: 5938f29d-4c3e-4621-995f-97d81a8685e1
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: SITE_NUMBER
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 421c60f1-f81d-4861-8f52-479e05f6e804
+                stepCounter: 57d898ba-38b8-472e-8367-27b2b622e37e
+            transform: STG.SITE_NUMBER
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 32a0c4f8-4e1b-4191-be7d-30a21dd51a31
+          stepCounter: 5938f29d-4c3e-4621-995f-97d81a8685e1
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: DIVISION_ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5b03f02e-c533-4f10-9830-22c6d46d2524
+                stepCounter: 57d898ba-38b8-472e-8367-27b2b622e37e
+            transform: STG.DIVISION_ID
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 323267b1-e284-48f8-b7cd-e99d82136d85
+          stepCounter: 5938f29d-4c3e-4621-995f-97d81a8685e1
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: DIVISION_NAME
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 820624a0-ec52-47d3-9fef-ac97c7217c09
+                stepCounter: 57d898ba-38b8-472e-8367-27b2b622e37e
+            transform: STG.DIVISION_NAME
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4c33f114-f584-490b-93ca-efc0683a48e8
+          stepCounter: 5938f29d-4c3e-4621-995f-97d81a8685e1
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: SUBSIDIARY_ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 63b0e35f-3d6f-42a9-b3a6-57da8e54728f
+                stepCounter: 57d898ba-38b8-472e-8367-27b2b622e37e
+            transform: STG.SUBSIDIARY_ID
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: d74d3209-eb5b-419b-b0b6-173663b652a9
+          stepCounter: 5938f29d-4c3e-4621-995f-97d81a8685e1
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: SUBSIDIARY_NAME
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 779c8d55-6b60-4c74-a0da-b72e59a859b5
+                stepCounter: 57d898ba-38b8-472e-8367-27b2b622e37e
+            transform: STG.SUBSIDIARY_NAME
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: e82e0e0a-9d2a-43b6-979a-df6210f13f63
+          stepCounter: 5938f29d-4c3e-4621-995f-97d81a8685e1
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: LOCATION_ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ff5ecfd4-25e5-4f40-a335-c3f2ca0d7507
+                stepCounter: 57d898ba-38b8-472e-8367-27b2b622e37e
+            transform: STG.LOCATION_ID
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: d89617d9-c454-47b2-a429-231a47738f7b
+          stepCounter: 5938f29d-4c3e-4621-995f-97d81a8685e1
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: LOCATION_NAME
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 790ab27b-231a-4286-90f4-52627e74f836
+                stepCounter: 57d898ba-38b8-472e-8367-27b2b622e37e
+            transform: STG.LOCATION_NAME
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 32d5612f-eb04-4c4f-9e63-44f366050b4c
+          stepCounter: 5938f29d-4c3e-4621-995f-97d81a8685e1
+        config: {}
+        dataType: INT
+        description: ""
+        name: ACA_SOURCE_SYSTEM_ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 1e571c6d-557c-4c71-ae62-a3c31168972e
+                stepCounter: 57d898ba-38b8-472e-8367-27b2b622e37e
+            transform: STG.ACA_SOURCE_SYSTEM_ID
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: aac22e86-c56a-4d2c-afca-a6b107e384eb
+          stepCounter: 5938f29d-4c3e-4621-995f-97d81a8685e1
+        config: {}
+        dataType: DATETIME
+        description: ""
+        name: ACA_DATE_CREATED
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f2859187-5c56-42ac-bf7c-50614f2e308f
+                stepCounter: 57d898ba-38b8-472e-8367-27b2b622e37e
+            transform: STG.ACA_DATE_CREATED
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 510444dd-c276-48c0-827c-3f2d24294e5a
+          stepCounter: 5938f29d-4c3e-4621-995f-97d81a8685e1
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: ACA_CREATE_USER
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c1247d77-c9de-4b95-a8ca-d4f18ed476b7
+                stepCounter: 57d898ba-38b8-472e-8367-27b2b622e37e
+            transform: STG.ACA_CREATE_USER
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4293f0b2-32a5-485a-a7f4-3453713f9f78
+          stepCounter: 5938f29d-4c3e-4621-995f-97d81a8685e1
+        config: {}
+        dataType: DATETIME
+        description: ""
+        name: ACA_DATE_UPDATED
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3ff5d666-4e58-45a8-b6ae-2224d08b3e89
+                stepCounter: 57d898ba-38b8-472e-8367-27b2b622e37e
+            transform: STG.ACA_DATE_UPDATED
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 44265551-3d71-46ab-85b8-502a5c95781a
+          stepCounter: 5938f29d-4c3e-4621-995f-97d81a8685e1
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: ACA_UPDATE_USER
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 63fd0b91-cc51-404f-a99f-7ac0493836d5
+                stepCounter: 57d898ba-38b8-472e-8367-27b2b622e37e
+            transform: STG.ACA_UPDATE_USER
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          ACA_ACCOUNT_STRUCTURE_STAGING_ESIS: stg
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: DBSHIFT
+            nodeName: ACA_ACCOUNT_STRUCTURE_STAGING_ESIS
+        join:
+          joinCondition: FROM {{ ref('DBSHIFT', 'ACA_ACCOUNT_STRUCTURE_STAGING_ESIS')
+            }} "stg"
+        name: STG_ACA_ACCOUNT_STRUCTURE_ESIS_INSERT
+        noLinkRefs: []
+  name: STG_ACA_ACCOUNT_STRUCTURE_ESIS_INSERT
+  overrideSQL: false
+  schema: ""
+  sqlType: Stage
+  type: sql
+  version: 1
+type: Node
