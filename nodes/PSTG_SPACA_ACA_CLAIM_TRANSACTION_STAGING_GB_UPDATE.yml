@@ -1,0 +1,162 @@
+fileVersion: 1
+id: 1530dcfc-15a6-4be0-80be-2baf0b83b8b6
+name: PSTG_SPACA_ACA_CLAIM_TRANSACTION_STAGING_GB_UPDATE
+operation:
+  config:
+    insertStrategy: INSERT
+    postSQL: ""
+    preSQL: |-
+      BEGIN
+          USE DATABASE ALLIANT_CLAIMS_ASTRUS_STAGE;
+
+          UPDATE ALLIANT_CLAIMS_ASTRUS_STAGE.DBO.ACA_CLAIM_TRANSACTION_STAGING_GB S
+          SET
+              ACA_CLAIM_ID = IFNULL(CL.ACA_CLAIM_ID, -1),
+              ACA_CLAIMANT_ID  = IFNULL(C.ACA_CLAIMANT_ID, -1),
+              ACA_DATE_ID_TRANSACTION_DATE = IFNULL(TRY_CAST(TO_CHAR(S.SOURCE_SYSTEM_TRANSACTION_DATE, 'YYYYMMDD') AS INT), -1),
+              ACA_DATE_ID_STATUS_DATE = IFNULL(TRY_CAST(TO_CHAR(S.STATUS_DATE, 'YYYYMMDD') AS INT), -1),
+              ACA_DATE_ID_REPORTED_DATE = IFNULL(TRY_CAST(TO_CHAR(S.REPORTED_DATE, 'YYYYMMDD') AS INT), -1),
+              ACA_DATE_ID_ACCIDENT_DATE = IFNULL(TRY_CAST(TO_CHAR(S.ACCIDENT_DATE, 'YYYYMMDD') AS INT), -1),
+              ACA_POLICY_ID = IFNULL(P.ACA_POLICY_ID, -1),
+              ACA_CLAIM_ATTRIBUTE_ID = IFNULL(CA.ACA_CLAIM_ATTRIBUTE_ID, -1),
+              ACA_CURRENT_FLAG = IFF(S.SOURCE_SYSTEM_TRANSACTION_DATE = MX.MAX_TRANSACTION_DATE_PER_CLAIM, 'Y' , 'N'),
+              ACA_TRANSACTION_DATE = S.SOURCE_SYSTEM_TRANSACTION_DATE,
+              MAX_TRANSACTION_DATE_PER_CLAIM = MX.MAX_TRANSACTION_DATE_PER_CLAIM,
+              NEXT_TRANSACTION_DATE = MX.NEXT_TRANSACTION_DATE,
+              ACA_ACCIDENT_SOURCE_CODE_ID = IFNULL(ASCO.ACA_ACCIDENT_SOURCE_CODE_ID, -1),
+              DESCRIPTION_OF_LOSS = NULL,
+              VEHICLE_IDENTIFICATION_NUMBER = NULL,
+              CLAIMANT = NULL,
+              CLAIMANT_SSN = NULL,
+              ACA_SOURCE_SYSTEM_ID = ACA_SS.ACA_SOURCE_SYSTEM_ID,
+              ACA_UPDATE_USER = 'spaca_aca_claim_transaction_staging_gb_update',
+              ACA_DATE_UPDATED = CURRENT_TIMESTAMP()
+          FROM (
+              SELECT
+                  SOURCE_SYSTEM_CLAIM_ID,
+                  SOURCE_SYSTEM_TRANSACTION_DATE,
+                  DATEADD(DAY, -1, LEAD(SOURCE_SYSTEM_TRANSACTION_DATE, 1) OVER (PARTITION BY SOURCE_SYSTEM_CLAIM_ID ORDER BY SOURCE_SYSTEM_TRANSACTION_DATE ASC)) AS NEXT_TRANSACTION_DATE,
+                  MAX(SOURCE_SYSTEM_TRANSACTION_DATE) OVER (PARTITION BY SOURCE_SYSTEM_CLAIM_ID) AS MAX_TRANSACTION_DATE_PER_CLAIM
+              FROM ALLIANT_CLAIMS_ASTRUS_STAGE.DBO.ACA_CLAIM_TRANSACTION_STAGING_GB
+          ) AS MX
+          CROSS JOIN (SELECT ACA_SOURCE_SYSTEM_ID FROM ALLIANT_CLAIMS_ASTRUS.DBO.ACA_SOURCE_SYSTEM WHERE SOURCE_SYSTEM = 'GB') AS ACA_SS
+          LEFT OUTER JOIN ALLIANT_CLAIMS_ASTRUS.DBO.ACA_CLAIM CL ON S.SOURCE_SYSTEM_CLAIM_ID = CL.SOURCE_SYSTEM_CLAIM_ID AND CL.ACA_SOURCE_SYSTEM_ID = ACA_SS.ACA_SOURCE_SYSTEM_ID
+          LEFT OUTER JOIN ALLIANT_CLAIMS_ASTRUS.DBO.ACA_CLAIMANT C ON S.SOURCE_SYSTEM_CLAIMANT_ID = C.SOURCE_SYSTEM_CLAIMANT_ID
+          LEFT OUTER JOIN ALLIANT_CLAIMS_ASTRUS.DBO.ACA_POLICY P ON P.SOURCE_SYSTEM_POLICY_ID = S.SOURCE_SYSTEM_POLICY_ID
+          LEFT OUTER JOIN ALLIANT_CLAIMS_ASTRUS.DBO.ACA_CLAIM_ATTRIBUTE CA ON S.SOURCE_SYSTEM_CLAIM_ATTRIBUTE_ID = CA.SOURCE_SYSTEM_CLAIM_ATTRIBUTE_ID
+          LEFT OUTER JOIN ALLIANT_CLAIMS_ASTRUS.REF.ACA_ACCIDENT_SOURCE_CODE ASCO ON ASCO.SOURCE_SYSTEM_ACCIDENT_SOURCE_CODE_ID = S.SOURCE_SYSTEM_ACCIDENT_SOURCE_CODE_ID
+          WHERE S.SOURCE_SYSTEM_CLAIM_ID = MX.SOURCE_SYSTEM_CLAIM_ID
+          AND S.SOURCE_SYSTEM_TRANSACTION_DATE = MX.SOURCE_SYSTEM_TRANSACTION_DATE;
+      END;
+    testsEnabled: true
+    truncateBefore: false
+  database: ""
+  deployEnabled: true
+  description: "UPDATE-only conversion of spaca_aca_claim_transaction_staging_gb_update"
+  isMultisource: false
+  locationName: ALLIANT_CLAIMS_ASTRUS_STAGE_DBO
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: d2e9bfb7-1c39-4456-91e8-7d4efb4d241c
+          stepCounter: 1530dcfc-15a6-4be0-80be-2baf0b83b8b6
+        config: {}
+        dataType: BINARY(16)
+        description: ""
+        name: PSTG_SPACA_ACA_CLAIM_TRANSACTION_STAGING_GB_UPDATE_KEY
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "MD5(TO_VARCHAR(1))"
+        transform: "MD5(TO_VARCHAR(1))"
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: a3f1cf1d-91d1-4e4c-83b3-8ab3412a32c1
+          stepCounter: 1530dcfc-15a6-4be0-80be-2baf0b83b8b6
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: SYSTEM_VERSION
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "1"
+        transform: "1"
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: bf1288c1-155e-4c31-9a74-b5a8f4c193e8
+          stepCounter: 1530dcfc-15a6-4be0-80be-2baf0b83b8b6
+        config: {}
+        dataType: VARCHAR(1)
+        description: ""
+        name: SYSTEM_CURRENT_FLAG
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "'Y'"
+        transform: "'Y'"
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c94f29a0-b5ec-4e78-bc4a-9b4e311f5d68
+          stepCounter: 1530dcfc-15a6-4be0-80be-2baf0b83b8b6
+        config: {}
+        dataType: TIMESTAMP_NTZ
+        description: ""
+        name: SYSTEM_START_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "CAST(CURRENT_TIMESTAMP AS TIMESTAMP)"
+        transform: "CAST(CURRENT_TIMESTAMP AS TIMESTAMP)"
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8d1f2b4c-9a48-4221-a481-28cf88df8e85
+          stepCounter: 1530dcfc-15a6-4be0-80be-2baf0b83b8b6
+        config: {}
+        dataType: TIMESTAMP_NTZ
+        description: ""
+        name: SYSTEM_END_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "CAST('2999-12-31 00:00:00.000' AS TIMESTAMP)"
+        transform: "CAST('2999-12-31 00:00:00.000' AS TIMESTAMP)"
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: f4b27ab2-d286-4e57-9db8-cfd2b86d6342
+          stepCounter: 1530dcfc-15a6-4be0-80be-2baf0b83b8b6
+        config: {}
+        dataType: TIMESTAMP_NTZ
+        description: ""
+        name: SYSTEM_CREATE_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "CAST(CURRENT_TIMESTAMP AS TIMESTAMP)"
+        transform: "CAST(CURRENT_TIMESTAMP AS TIMESTAMP)"
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2d3c16f2-0852-4e89-ae15-9ef63c46a815
+          stepCounter: 1530dcfc-15a6-4be0-80be-2baf0b83b8b6
+        config: {}
+        dataType: TIMESTAMP_NTZ
+        description: ""
+        name: SYSTEM_UPDATE_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "CAST(CURRENT_TIMESTAMP AS TIMESTAMP)"
+        transform: "CAST(CURRENT_TIMESTAMP AS TIMESTAMP)"
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping: []
+  name: PSTG_SPACA_ACA_CLAIM_TRANSACTION_STAGING_GB_UPDATE
+  overrideSQL: false
+  schema: ""
+  sqlType: persistentStage
+  type: sql
+  version: 1
+type: Node
